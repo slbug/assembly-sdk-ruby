@@ -1,4 +1,4 @@
-# OpenapiClient::SimpleCompany
+# AssemblyPayments::SimpleCompany
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::SimpleCompany.new(
+instance = AssemblyPayments::SimpleCompany.new(
   id: 9280aa36-d7f8-4959-b1ed-0ace2c12cfa2,
   name: Assembly Payments,
   legal_name: PromisePay

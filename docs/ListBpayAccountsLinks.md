@@ -1,4 +1,4 @@
-# OpenapiClient::ListBpayAccountsLinks
+# AssemblyPayments::ListBpayAccountsLinks
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::ListBpayAccountsLinks.new(
+instance = AssemblyPayments::ListBpayAccountsLinks.new(
   _self: null,
   users: null
 )

@@ -1,4 +1,4 @@
-# OpenapiClient::FeesApi
+# AssemblyPayments::FeesApi
 
 All URIs are relative to *https://test.api.promisepay.com*
 
@@ -21,9 +21,9 @@ Create a **Fee** to be associated with an **Item**. **Fees** will add or subtrac
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -32,14 +32,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::FeesApi.new
-fee_request_body = OpenapiClient::FeeRequestBody.new({name: 'Seller Success Fee', fee_type_id: '1', amount: 200}) # FeeRequestBody | 
+api_instance = AssemblyPayments::FeesApi.new
+fee_request_body = AssemblyPayments::FeeRequestBody.new({name: 'Seller Success Fee', fee_type_id: '1', amount: 200}) # FeeRequestBody | 
 
 begin
   # Create fee
   result = api_instance.create_fee(fee_request_body)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling FeesApi->create_fee: #{e}"
 end
 ```
@@ -57,7 +57,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleFee>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling FeesApi->create_fee_with_http_info: #{e}"
 end
 ```
@@ -94,9 +94,9 @@ Retrieve an ordered and paginated list of existing **Fees**.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -105,7 +105,7 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::FeesApi.new
+api_instance = AssemblyPayments::FeesApi.new
 opts = {
   limit: 56, # Integer | Number of records to retrieve. Up to 200.
   offset: 56 # Integer | Number of records to offset. Required for pagination.
@@ -115,7 +115,7 @@ begin
   # List Fees
   result = api_instance.list_fees(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling FeesApi->list_fees: #{e}"
 end
 ```
@@ -133,7 +133,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Fees>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling FeesApi->list_fees_with_http_info: #{e}"
 end
 ```
@@ -171,9 +171,9 @@ Show details of a specific **Fee** using a given `:id`. If the `item_amount` is 
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -182,7 +182,7 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::FeesApi.new
+api_instance = AssemblyPayments::FeesApi.new
 id = '1e5e372a-df3a-4f77-af2f-ec294b1715ce' # String | Fee ID
 item_amount = 200 # Integer | The cost of the item in cents on which the calculated Fee is based
 
@@ -190,7 +190,7 @@ begin
   # Show Fee
   result = api_instance.show_fee(id, item_amount)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling FeesApi->show_fee: #{e}"
 end
 ```
@@ -208,7 +208,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleFee>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling FeesApi->show_fee_with_http_info: #{e}"
 end
 ```

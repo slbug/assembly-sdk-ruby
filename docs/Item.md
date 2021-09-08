@@ -1,4 +1,4 @@
-# OpenapiClient::Item
+# AssemblyPayments::Item
 
 ## Properties
 
@@ -54,9 +54,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::Item.new(
+instance = AssemblyPayments::Item.new(
   id: 100fd4a0-0538-11e6-b512-3e1d05defe78,
   name: Landscaping Job #001,
   description: Planting of natives, removal of tree stump.,

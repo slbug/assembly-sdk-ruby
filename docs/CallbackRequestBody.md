@@ -1,4 +1,4 @@
-# OpenapiClient::CallbackRequestBody
+# AssemblyPayments::CallbackRequestBody
 
 ## Properties
 
@@ -12,9 +12,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::CallbackRequestBody.new(
+instance = AssemblyPayments::CallbackRequestBody.new(
   description: Users Callback,
   url: https://httpbin.org,
   object_type: users,

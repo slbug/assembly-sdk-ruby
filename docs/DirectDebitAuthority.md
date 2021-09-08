@@ -1,4 +1,4 @@
-# OpenapiClient::DirectDebitAuthority
+# AssemblyPayments::DirectDebitAuthority
 
 ## Properties
 
@@ -17,9 +17,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::DirectDebitAuthority.new(
+instance = AssemblyPayments::DirectDebitAuthority.new(
   id: 8f233e04-ffaa-4c9d-adf9-244853848e21,
   created_at: null,
   updated_at: null,

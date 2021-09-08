@@ -1,4 +1,4 @@
-# OpenapiClient::ChargeRequestBody
+# AssemblyPayments::ChargeRequestBody
 
 ## Properties
 
@@ -22,9 +22,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::ChargeRequestBody.new(
+instance = AssemblyPayments::ChargeRequestBody.new(
   account_id: 5ef44050-4c56-0137-abdf-0242ac110002,
   name: Test Charge 001,
   amount: 1000,

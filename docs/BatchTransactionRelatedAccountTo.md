@@ -1,4 +1,4 @@
-# OpenapiClient::BatchTransactionRelatedAccountTo
+# AssemblyPayments::BatchTransactionRelatedAccountTo
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::BatchTransactionRelatedAccountTo.new(
+instance = AssemblyPayments::BatchTransactionRelatedAccountTo.new(
   id: 385b50bb-237a-42cb-9382-22953e191ae6,
   account_type: wallet_account,
   user_id: 5830def0-ffe8-11e5-86aa-5e5517507c66

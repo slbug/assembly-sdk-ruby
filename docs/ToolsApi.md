@@ -1,4 +1,4 @@
-# OpenapiClient::ToolsApi
+# AssemblyPayments::ToolsApi
 
 All URIs are relative to *https://test.api.promisepay.com*
 
@@ -19,9 +19,9 @@ Displays a health check of the Assembly service.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -30,13 +30,13 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::ToolsApi.new
+api_instance = AssemblyPayments::ToolsApi.new
 
 begin
   # Health check
   result = api_instance.health_check
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ToolsApi->health_check: #{e}"
 end
 ```
@@ -54,7 +54,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ToolsStatus>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ToolsApi->health_check_with_http_info: #{e}"
 end
 ```

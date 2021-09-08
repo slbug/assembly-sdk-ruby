@@ -1,4 +1,4 @@
-# OpenapiClient::ItemRequestBody
+# AssemblyPayments::ItemRequestBody
 
 ## Properties
 
@@ -21,9 +21,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::ItemRequestBody.new(
+instance = AssemblyPayments::ItemRequestBody.new(
   id: 7190770-1-2908,
   name: Item 7190770-1-2908,
   amount: 102,

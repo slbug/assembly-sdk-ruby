@@ -1,4 +1,4 @@
-# OpenapiClient::PennyVerifyRequestBody
+# AssemblyPayments::PennyVerifyRequestBody
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::PennyVerifyRequestBody.new(
+instance = AssemblyPayments::PennyVerifyRequestBody.new(
   amount_1: null,
   amount_2: null
 )

@@ -1,4 +1,4 @@
-# OpenapiClient::AddressesApi
+# AssemblyPayments::AddressesApi
 
 All URIs are relative to *https://test.api.promisepay.com*
 
@@ -19,9 +19,9 @@ Show details of a specific Address using a given address `:id`.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -30,14 +30,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::AddressesApi.new
+api_instance = AssemblyPayments::AddressesApi.new
 id = 'aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee' # String | Address ID
 
 begin
   # Show Address
   result = api_instance.show_address(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling AddressesApi->show_address: #{e}"
 end
 ```
@@ -55,7 +55,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Address>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling AddressesApi->show_address_with_http_info: #{e}"
 end
 ```

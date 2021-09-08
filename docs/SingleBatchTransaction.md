@@ -1,4 +1,4 @@
-# OpenapiClient::SingleBatchTransaction
+# AssemblyPayments::SingleBatchTransaction
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::SingleBatchTransaction.new(
+instance = AssemblyPayments::SingleBatchTransaction.new(
   batch_transactions: null
 )
 ```

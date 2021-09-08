@@ -1,4 +1,4 @@
-# OpenapiClient::CardAccountRequestBody
+# AssemblyPayments::CardAccountRequestBody
 
 ## Properties
 
@@ -14,9 +14,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::CardAccountRequestBody.new(
+instance = AssemblyPayments::CardAccountRequestBody.new(
   full_name: John Doe,
   number: 4444111122223333,
   expiry_month: 1,

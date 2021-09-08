@@ -1,4 +1,4 @@
-# OpenapiClient::RefundRequestBody
+# AssemblyPayments::RefundRequestBody
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::RefundRequestBody.new(
+instance = AssemblyPayments::RefundRequestBody.new(
   refund_amount: null,
   refund_message: ,
   account_id: 

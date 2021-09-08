@@ -1,4 +1,4 @@
-# OpenapiClient::ChargesApi
+# AssemblyPayments::ChargesApi
 
 All URIs are relative to *https://test.api.promisepay.com*
 
@@ -23,9 +23,9 @@ Create a **Charge**. **Charges** require a specified **Card Account** or **Bank 
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -34,14 +34,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::ChargesApi.new
-charge_request_body = OpenapiClient::ChargeRequestBody.new({account_id: '5ef44050-4c56-0137-abdf-0242ac110002', amount: 1000, email: 'buyer-1556505753@promisepay.com', zip: 3000, country: 'AUS'}) # ChargeRequestBody | 
+api_instance = AssemblyPayments::ChargesApi.new
+charge_request_body = AssemblyPayments::ChargeRequestBody.new({account_id: '5ef44050-4c56-0137-abdf-0242ac110002', amount: 1000, email: 'buyer-1556505753@promisepay.com', zip: 3000, country: 'AUS'}) # ChargeRequestBody | 
 
 begin
   # Create Charge
   result = api_instance.create_charge(charge_request_body)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ChargesApi->create_charge: #{e}"
 end
 ```
@@ -59,7 +59,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleCharge>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ChargesApi->create_charge_with_http_info: #{e}"
 end
 ```
@@ -96,9 +96,9 @@ Retrieve an ordered and paginated list of **Charges**.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -107,7 +107,7 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::ChargesApi.new
+api_instance = AssemblyPayments::ChargesApi.new
 opts = {
   limit: 56, # Integer | Number of records to retrieve. Up to 200.
   offset: 56 # Integer | Number of records to offset. Required for pagination.
@@ -117,7 +117,7 @@ begin
   # List Charges
   result = api_instance.list_charges(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ChargesApi->list_charges: #{e}"
 end
 ```
@@ -135,7 +135,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Charges>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ChargesApi->list_charges_with_http_info: #{e}"
 end
 ```
@@ -173,9 +173,9 @@ Show details of a specific **Charge** using a given `:id`.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -184,14 +184,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::ChargesApi.new
+api_instance = AssemblyPayments::ChargesApi.new
 id = '4d7d73f5-c7f0-477d-aff8-7570d2c7e7d9' # String | Charge ID
 
 begin
   # Show Charge
   result = api_instance.show_charge(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ChargesApi->show_charge: #{e}"
 end
 ```
@@ -209,7 +209,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleCharge>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ChargesApi->show_charge_with_http_info: #{e}"
 end
 ```
@@ -246,9 +246,9 @@ Show the buyer **User** associated with the **Charge** using a given `:id`.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -257,14 +257,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::ChargesApi.new
+api_instance = AssemblyPayments::ChargesApi.new
 id = '4d7d73f5-c7f0-477d-aff8-7570d2c7e7d9/buyers' # String | Charge ID
 
 begin
   # Show Charge Buyer
   result = api_instance.show_charge_buyer(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ChargesApi->show_charge_buyer: #{e}"
 end
 ```
@@ -282,7 +282,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleUser>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ChargesApi->show_charge_buyer_with_http_info: #{e}"
 end
 ```
@@ -319,9 +319,9 @@ Show status of a specific **Charge** using a given `:id`.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -330,14 +330,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::ChargesApi.new
+api_instance = AssemblyPayments::ChargesApi.new
 id = '1e5e372a-df3a-4f77-af2f-ec294b1715ce' # String | Charge ID
 
 begin
   # Show Charge Status
   result = api_instance.show_charge_status(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ChargesApi->show_charge_status: #{e}"
 end
 ```
@@ -355,7 +355,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleChargeStatus>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ChargesApi->show_charge_status_with_http_info: #{e}"
 end
 ```

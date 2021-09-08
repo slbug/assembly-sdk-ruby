@@ -1,4 +1,4 @@
-# OpenapiClient::UsersApi
+# AssemblyPayments::UsersApi
 
 All URIs are relative to *https://test.api.promisepay.com*
 
@@ -29,9 +29,9 @@ Create a **User**. **Users** can be associated with **Items** either as a buyer 
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -40,14 +40,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::UsersApi.new
-user_request_body = OpenapiClient::UserRequestBody.new({id: 'buyer-1556506027', first_name: 'Neol1556506027', last_name: 'Calangi', email: 'neol.calangi+buyer1556506027@promisepay.com', country: 'AUS'}) # UserRequestBody | 
+api_instance = AssemblyPayments::UsersApi.new
+user_request_body = AssemblyPayments::UserRequestBody.new({id: 'buyer-1556506027', first_name: 'Neol1556506027', last_name: 'Calangi', email: 'neol.calangi+buyer1556506027@promisepay.com', country: 'AUS'}) # UserRequestBody | 
 
 begin
   # Create User
   result = api_instance.create_user(user_request_body)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling UsersApi->create_user: #{e}"
 end
 ```
@@ -65,7 +65,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleUser>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling UsersApi->create_user_with_http_info: #{e}"
 end
 ```
@@ -102,9 +102,9 @@ List the **BPay Accounts** the **User** is associated with using a given `:id`.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -113,14 +113,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::UsersApi.new
+api_instance = AssemblyPayments::UsersApi.new
 id = '901d8cd0-6af3-0138-967d-0a58a9feac04' # String | User ID
 
 begin
   # List User's BPay Accounts
   result = api_instance.list_user_b_pay_accounts(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling UsersApi->list_user_b_pay_accounts: #{e}"
 end
 ```
@@ -138,7 +138,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListBpayAccounts>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling UsersApi->list_user_b_pay_accounts_with_http_info: #{e}"
 end
 ```
@@ -175,9 +175,9 @@ Retrieve an ordered and paginated list of existing **Items** the **User** is ass
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -186,7 +186,7 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::UsersApi.new
+api_instance = AssemblyPayments::UsersApi.new
 id = 'test-user-1592459047-22' # String | User ID
 opts = {
   offset: 56, # Integer | Number of records to offset. Required for pagination.
@@ -197,7 +197,7 @@ begin
   # List User Items
   result = api_instance.list_user_items(id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling UsersApi->list_user_items: #{e}"
 end
 ```
@@ -215,7 +215,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Items>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling UsersApi->list_user_items_with_http_info: #{e}"
 end
 ```
@@ -254,9 +254,9 @@ Retrieve an ordered and paginated list of existing **Users**.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -265,7 +265,7 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::UsersApi.new
+api_instance = AssemblyPayments::UsersApi.new
 search = 'search_example' # String | A text value to be used for searching users
 opts = {
   limit: 56, # Integer | Number of records to retrieve. Up to 200.
@@ -276,7 +276,7 @@ begin
   # List Users
   result = api_instance.list_users(search, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling UsersApi->list_users: #{e}"
 end
 ```
@@ -294,7 +294,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Users>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling UsersApi->list_users_with_http_info: #{e}"
 end
 ```
@@ -333,9 +333,9 @@ Set the **User’s Disbursement Account** using a given **User** `:id` and a **B
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -344,15 +344,15 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::UsersApi.new
+api_instance = AssemblyPayments::UsersApi.new
 id = 'Seller_1234' # String | User ID
-bank_account_id_request_body = OpenapiClient::BankAccountIdRequestBody.new({account_id: '901d8cd0-6af3-0138-967d-0a58a9feac04'}) # BankAccountIdRequestBody | 
+bank_account_id_request_body = AssemblyPayments::BankAccountIdRequestBody.new({account_id: '901d8cd0-6af3-0138-967d-0a58a9feac04'}) # BankAccountIdRequestBody | 
 
 begin
   # Set User Disbursement Account
   result = api_instance.set_user_disbursement_account(id, bank_account_id_request_body)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling UsersApi->set_user_disbursement_account: #{e}"
 end
 ```
@@ -370,7 +370,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleUser>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling UsersApi->set_user_disbursement_account_with_http_info: #{e}"
 end
 ```
@@ -408,9 +408,9 @@ Show details of a specific User using a given `:id`.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -419,14 +419,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::UsersApi.new
+api_instance = AssemblyPayments::UsersApi.new
 id = 'buyer-1556506027' # String | User ID
 
 begin
   # Show User
   result = api_instance.show_user(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling UsersApi->show_user: #{e}"
 end
 ```
@@ -444,7 +444,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleUser>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling UsersApi->show_user_with_http_info: #{e}"
 end
 ```
@@ -481,9 +481,9 @@ Shows the user’s active bank account using a given `:id`.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -492,14 +492,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::UsersApi.new
+api_instance = AssemblyPayments::UsersApi.new
 id = '46deb476-c1a6-41eb-8eb7-26a695bbe5bc' # String | User ID
 
 begin
   # Show User Bank Account
   result = api_instance.show_user_bank_account(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling UsersApi->show_user_bank_account: #{e}"
 end
 ```
@@ -517,7 +517,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <BankAccount>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling UsersApi->show_user_bank_account_with_http_info: #{e}"
 end
 ```
@@ -554,9 +554,9 @@ Show the user’s active card account using a given `:id`.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -565,14 +565,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::UsersApi.new
+api_instance = AssemblyPayments::UsersApi.new
 id = 'buyer-71439598' # String | User ID
 
 begin
   # Show User Card Account
   result = api_instance.show_user_card_account(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling UsersApi->show_user_card_account: #{e}"
 end
 ```
@@ -590,7 +590,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CardAccount>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling UsersApi->show_user_card_account_with_http_info: #{e}"
 end
 ```
@@ -627,9 +627,9 @@ Show the **User’s Wallet Account** using a given `:id`.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -638,14 +638,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::UsersApi.new
+api_instance = AssemblyPayments::UsersApi.new
 id = 'aed45af0-6f63-0138-901c-0a58a9feac03' # String | User ID
 
 begin
   # Show User Wallet Account
   result = api_instance.show_user_wallet_accounts(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling UsersApi->show_user_wallet_accounts: #{e}"
 end
 ```
@@ -663,7 +663,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <WalletAccount>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling UsersApi->show_user_wallet_accounts_with_http_info: #{e}"
 end
 ```
@@ -700,9 +700,9 @@ Update an existing **User’s** attributes using a given `:id`.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -711,15 +711,15 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::UsersApi.new
+api_instance = AssemblyPayments::UsersApi.new
 id = 'buyer-1556506027' # String | Unique ID that can be generated by the platform. Cannot contain ’.’ character.
-update_user_request_body = OpenapiClient::UpdateUserRequestBody.new({first_name: 'Neol1556506027'}) # UpdateUserRequestBody | 
+update_user_request_body = AssemblyPayments::UpdateUserRequestBody.new({first_name: 'Neol1556506027'}) # UpdateUserRequestBody | 
 
 begin
   # Update User
   result = api_instance.update_user(id, update_user_request_body)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling UsersApi->update_user: #{e}"
 end
 ```
@@ -737,7 +737,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleUser>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling UsersApi->update_user_with_http_info: #{e}"
 end
 ```
@@ -775,9 +775,9 @@ Sets a user’s verification state to `approved` on pre-live given the **User** 
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -786,14 +786,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::UsersApi.new
+api_instance = AssemblyPayments::UsersApi.new
 id = 'buyer-1556506027' # String | User ID
 
 begin
   # Verify User (Prelive Only)
   result = api_instance.verify_user(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling UsersApi->verify_user: #{e}"
 end
 ```
@@ -811,7 +811,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleUser>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling UsersApi->verify_user_with_http_info: #{e}"
 end
 ```

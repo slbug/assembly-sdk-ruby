@@ -1,4 +1,4 @@
-# OpenapiClient::TransactionsApi
+# AssemblyPayments::TransactionsApi
 
 All URIs are relative to *https://test.api.promisepay.com*
 
@@ -25,9 +25,9 @@ Retrieve an ordered and paginated list of **Transactions**. Note: `created_befor
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -36,7 +36,7 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::TransactionsApi.new
+api_instance = AssemblyPayments::TransactionsApi.new
 opts = {
   limit: 56, # Integer | Number of records to retrieve. Up to 200.
   offset: 56, # Integer | Number of records to offset. Required for pagination.
@@ -54,7 +54,7 @@ begin
   # List Transactions
   result = api_instance.list_transactions(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling TransactionsApi->list_transactions: #{e}"
 end
 ```
@@ -72,7 +72,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Transactions>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling TransactionsApi->list_transactions_with_http_info: #{e}"
 end
 ```
@@ -118,9 +118,9 @@ Show details of a specific **Transaction** using a given `:id`.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -129,14 +129,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::TransactionsApi.new
+api_instance = AssemblyPayments::TransactionsApi.new
 id = '27b91b10-70eb-0138-ec44-0a58a9feac06' # String | Transaction ID
 
 begin
   # Show Transaction
   result = api_instance.show_transaction(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling TransactionsApi->show_transaction: #{e}"
 end
 ```
@@ -154,7 +154,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleTransaction>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling TransactionsApi->show_transaction_with_http_info: #{e}"
 end
 ```
@@ -191,9 +191,9 @@ Show the **Bank Account** associated with the **Transaction** using a given `:id
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -202,14 +202,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::TransactionsApi.new
+api_instance = AssemblyPayments::TransactionsApi.new
 id = 'aed53110-6f63-0138-ea83-0a58a9feac04' # String | Transaction ID
 
 begin
   # Show Transaction Bank Account
   result = api_instance.show_transaction_bank_account(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling TransactionsApi->show_transaction_bank_account: #{e}"
 end
 ```
@@ -227,7 +227,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <BankAccount>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling TransactionsApi->show_transaction_bank_account_with_http_info: #{e}"
 end
 ```
@@ -264,9 +264,9 @@ Show the **Card Account** associated with the **Transaction** using a given `:id
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -275,14 +275,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::TransactionsApi.new
+api_instance = AssemblyPayments::TransactionsApi.new
 id = 'ea36e48a-4638-4d1a-a345-e1a0a584df8b' # String | Transaction ID
 
 begin
   # Show Transaction Card Account
   result = api_instance.show_transaction_card_account(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling TransactionsApi->show_transaction_card_account: #{e}"
 end
 ```
@@ -300,7 +300,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CardAccount>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling TransactionsApi->show_transaction_card_account_with_http_info: #{e}"
 end
 ```
@@ -337,9 +337,9 @@ Show the **Fees** associated with the **Transaction** using a given `:id`.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -348,14 +348,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::TransactionsApi.new
+api_instance = AssemblyPayments::TransactionsApi.new
 id = 'ea36e48a-4638-4d1a-a345-e1a0a584df8b' # String | Transaction ID
 
 begin
   # Show Transaction Fees
   result = api_instance.show_transaction_fees(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling TransactionsApi->show_transaction_fees: #{e}"
 end
 ```
@@ -373,7 +373,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Fees>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling TransactionsApi->show_transaction_fees_with_http_info: #{e}"
 end
 ```
@@ -410,9 +410,9 @@ Show the **User** associated with the **Transaction** using a given `:id`.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -421,14 +421,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::TransactionsApi.new
+api_instance = AssemblyPayments::TransactionsApi.new
 id = '901d8cd0-6af3-0138-967d-0a58a9feac04' # String | Transaction ID
 
 begin
   # Show Transaction User
   result = api_instance.show_transaction_user(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling TransactionsApi->show_transaction_user: #{e}"
 end
 ```
@@ -446,7 +446,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleUser>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling TransactionsApi->show_transaction_user_with_http_info: #{e}"
 end
 ```
@@ -483,9 +483,9 @@ Show the **Wallet Account** associated with the **Transaction** using a given `:
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -494,14 +494,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::TransactionsApi.new
+api_instance = AssemblyPayments::TransactionsApi.new
 id = 'ea36e48a-4638-4d1a-a345-e1a0a584df8b' # String | Transaction ID
 
 begin
   # Show Transaction Wallet Account
   result = api_instance.show_transaction_wallet_account(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling TransactionsApi->show_transaction_wallet_account: #{e}"
 end
 ```
@@ -519,7 +519,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <WalletAccount>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling TransactionsApi->show_transaction_wallet_account_with_http_info: #{e}"
 end
 ```

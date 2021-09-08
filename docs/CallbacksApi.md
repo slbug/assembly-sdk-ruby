@@ -1,4 +1,4 @@
-# OpenapiClient::CallbacksApi
+# AssemblyPayments::CallbacksApi
 
 All URIs are relative to *https://test.api.promisepay.com*
 
@@ -25,9 +25,9 @@ Create a **Callback** to notify you at the `URL` when the `object_type` changes
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -36,14 +36,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::CallbacksApi.new
-callback_request_body = OpenapiClient::CallbackRequestBody.new({description: 'Users Callback', url: 'https://httpbin.org', object_type: 'users', enabled: 'true'}) # CallbackRequestBody | 
+api_instance = AssemblyPayments::CallbacksApi.new
+callback_request_body = AssemblyPayments::CallbackRequestBody.new({description: 'Users Callback', url: 'https://httpbin.org', object_type: 'users', enabled: 'true'}) # CallbackRequestBody | 
 
 begin
   # Create Callback
   result = api_instance.create_callback(callback_request_body)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling CallbacksApi->create_callback: #{e}"
 end
 ```
@@ -61,7 +61,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleCallback>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling CallbacksApi->create_callback_with_http_info: #{e}"
 end
 ```
@@ -98,9 +98,9 @@ Delete an existing Callback using a given `:id`.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -109,14 +109,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::CallbacksApi.new
+api_instance = AssemblyPayments::CallbacksApi.new
 id = 'aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee' # String | Callback ID
 
 begin
   # Delete Callback
   result = api_instance.delete_callback(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling CallbacksApi->delete_callback: #{e}"
 end
 ```
@@ -134,7 +134,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CallbackDeletion>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling CallbacksApi->delete_callback_with_http_info: #{e}"
 end
 ```
@@ -171,9 +171,9 @@ Retrieve an ordered and paginated list of the responses garnered from a callback
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -182,7 +182,7 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::CallbacksApi.new
+api_instance = AssemblyPayments::CallbacksApi.new
 id = 'aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee' # String | Callback ID
 opts = {
   limit: 56, # Integer | Number of records to retrieve. Up to 200.
@@ -193,7 +193,7 @@ begin
   # List Callback Responses
   result = api_instance.list_callback_response(id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling CallbacksApi->list_callback_response: #{e}"
 end
 ```
@@ -211,7 +211,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListCallbackResponses>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling CallbacksApi->list_callback_response_with_http_info: #{e}"
 end
 ```
@@ -250,9 +250,9 @@ Retrieve an ordered and paginated list of all created **Callbacks**.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -261,7 +261,7 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::CallbacksApi.new
+api_instance = AssemblyPayments::CallbacksApi.new
 opts = {
   limit: 56, # Integer | Number of records to retrieve. Up to 200.
   offset: 56, # Integer | Number of records to offset. Required for pagination.
@@ -272,7 +272,7 @@ begin
   # List Callbacks
   result = api_instance.list_callbacks(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling CallbacksApi->list_callbacks: #{e}"
 end
 ```
@@ -290,7 +290,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Callbacks>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling CallbacksApi->list_callbacks_with_http_info: #{e}"
 end
 ```
@@ -329,9 +329,9 @@ Show details of a specific **Callback** using a given `:id`.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -340,14 +340,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::CallbacksApi.new
+api_instance = AssemblyPayments::CallbacksApi.new
 id = 'aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee' # String | Callback ID
 
 begin
   # Show Callback
   result = api_instance.show_callback(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling CallbacksApi->show_callback: #{e}"
 end
 ```
@@ -365,7 +365,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleCallback>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling CallbacksApi->show_callback_with_http_info: #{e}"
 end
 ```
@@ -402,9 +402,9 @@ Show details of a specific **Callback** response using a given `:id`.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -413,7 +413,7 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::CallbacksApi.new
+api_instance = AssemblyPayments::CallbacksApi.new
 callback_id = '088e4cf1-2508-4bd4-97ab-a78e4e869970' # String | Callback ID
 id = '0c9cbb28-0b98-4560-9c81-7a4ea6cde95b' # String | Callback response ID
 
@@ -421,7 +421,7 @@ begin
   # Show Callback Response
   result = api_instance.show_callback_response(callback_id, id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling CallbacksApi->show_callback_response: #{e}"
 end
 ```
@@ -439,7 +439,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleCallbackResponse>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling CallbacksApi->show_callback_response_with_http_info: #{e}"
 end
 ```
@@ -477,9 +477,9 @@ Update an existing **Callback** using a given `:id`. You can change the `URL`, t
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -488,15 +488,15 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::CallbacksApi.new
+api_instance = AssemblyPayments::CallbacksApi.new
 id = 'aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee' # String | Callback ID
-callback_request_body = OpenapiClient::CallbackRequestBody.new({description: 'Users Callback', url: 'https://httpbin.org', object_type: 'users', enabled: 'true'}) # CallbackRequestBody | 
+callback_request_body = AssemblyPayments::CallbackRequestBody.new({description: 'Users Callback', url: 'https://httpbin.org', object_type: 'users', enabled: 'true'}) # CallbackRequestBody | 
 
 begin
   # Update Callback
   result = api_instance.update_callback(id, callback_request_body)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling CallbacksApi->update_callback: #{e}"
 end
 ```
@@ -514,7 +514,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleCallback>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling CallbacksApi->update_callback_with_http_info: #{e}"
 end
 ```

@@ -1,4 +1,4 @@
-# OpenapiClient::CallbackResponse
+# AssemblyPayments::CallbackResponse
 
 ## Properties
 
@@ -14,9 +14,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::CallbackResponse.new(
+instance = AssemblyPayments::CallbackResponse.new(
   id: 4476b384-fa48-4473-98ec-8fcdda4a1e84,
   url: https://httpbin.org/post,
   created_at: null,

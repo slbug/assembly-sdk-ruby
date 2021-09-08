@@ -1,4 +1,4 @@
-# OpenapiClient::TransactionLinks
+# AssemblyPayments::TransactionLinks
 
 ## Properties
 
@@ -19,9 +19,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::TransactionLinks.new(
+instance = AssemblyPayments::TransactionLinks.new(
   _self: /transactions/ea36e48a-4638-4d1a-a345-e1a0a584df8b,
   users: /transactions/ea36e48a-4638-4d1a-a345-e1a0a584df8b/users,
   fees: /transactions/ea36e48a-4638-4d1a-a345-e1a0a584df8b/fees,

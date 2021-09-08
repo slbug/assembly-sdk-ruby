@@ -1,4 +1,4 @@
-# OpenapiClient::Callbacks
+# AssemblyPayments::Callbacks
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::Callbacks.new(
+instance = AssemblyPayments::Callbacks.new(
   callbacks: null
 )
 ```

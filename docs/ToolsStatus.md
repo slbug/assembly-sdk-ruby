@@ -1,4 +1,4 @@
-# OpenapiClient::ToolsStatus
+# AssemblyPayments::ToolsStatus
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::ToolsStatus.new(
+instance = AssemblyPayments::ToolsStatus.new(
   status: healthy
 )
 ```

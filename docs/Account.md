@@ -1,4 +1,4 @@
-# OpenapiClient::Account
+# AssemblyPayments::Account
 
 ## Properties
 
@@ -13,9 +13,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::Account.new(
+instance = AssemblyPayments::Account.new(
   active: true,
   created_at: null,
   updated_at: null,

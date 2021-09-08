@@ -1,4 +1,4 @@
-# OpenapiClient::ItemRelated
+# AssemblyPayments::ItemRelated
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::ItemRelated.new(
+instance = AssemblyPayments::ItemRelated.new(
   buyers: 064d6800-fff3-11e5-86aa-5e5517507c66,
   sellers: 5830def0-ffe8-11e5-86aa-5e5517507c66
 )

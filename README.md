@@ -1,6 +1,6 @@
-# openapi_client
+# assembly_payments
 
-OpenapiClient - the Ruby gem for the Assembly API
+AssemblyPayments - the Ruby gem for the Assembly API
 
 Assembly (formely PromisePay) is a powerful payments engine custom-built for platforms and marketplaces.
 
@@ -18,28 +18,28 @@ For more information, please visit [http://docs.assemblypayments.com/](http://do
 To build the Ruby code into a gem:
 
 ```shell
-gem build openapi_client.gemspec
+gem build assembly_payments.gemspec
 ```
 
 Then either install the gem locally:
 
 ```shell
-gem install ./openapi_client-1.0.0.gem
+gem install ./assembly_payments-1.0.0.gem
 ```
 
-(for development, run `gem install --dev ./openapi_client-1.0.0.gem` to install the development dependencies)
+(for development, run `gem install --dev ./assembly_payments-1.0.0.gem` to install the development dependencies)
 
 or publish the gem to a gem hosting service, e.g. [RubyGems](https://rubygems.org/).
 
 Finally add this to the Gemfile:
 
-    gem 'openapi_client', '~> 1.0.0'
+    gem 'assembly_payments', '~> 1.0.0'
 
 ### Install from Git
 
 If the Ruby gem is hosted at a git repository: https://github.com/GIT_USER_ID/GIT_REPO_ID, then add the following in the Gemfile:
 
-    gem 'openapi_client', :git => 'https://github.com/GIT_USER_ID/GIT_REPO_ID.git'
+    gem 'assembly_payments', :git => 'https://github.com/GIT_USER_ID/GIT_REPO_ID.git'
 
 ### Include the Ruby code directly
 
@@ -55,10 +55,10 @@ Please follow the [installation](#installation) procedure and then run the follo
 
 ```ruby
 # Load the gem
-require 'openapi_client'
+require 'assembly_payments'
 
 # Setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR_USERNAME'
   config.password = 'YOUR_PASSWORD'
@@ -67,14 +67,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::AddressesApi.new
+api_instance = AssemblyPayments::AddressesApi.new
 id = 'aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee' # String | Address ID
 
 begin
   #Show Address
   result = api_instance.show_address(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Exception when calling AddressesApi->show_address: #{e}"
 end
 
@@ -86,240 +86,240 @@ All URIs are relative to *https://test.api.promisepay.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*OpenapiClient::AddressesApi* | [**show_address**](docs/AddressesApi.md#show_address) | **GET** /addresses/{id} | Show Address
-*OpenapiClient::AuthenticationApi* | [**token**](docs/AuthenticationApi.md#token) | **POST** /tokens | Token
-*OpenapiClient::BPayAccountsApi* | [**create_b_pay_account**](docs/BPayAccountsApi.md#create_b_pay_account) | **POST** /bpay_accounts | Create BPay Account
-*OpenapiClient::BPayAccountsApi* | [**redact_b_pay_account**](docs/BPayAccountsApi.md#redact_b_pay_account) | **DELETE** /bpay_accounts/{id} | Redact BPay Account (Future Feature)
-*OpenapiClient::BPayAccountsApi* | [**show_b_pay_account**](docs/BPayAccountsApi.md#show_b_pay_account) | **GET** /bpay_accounts/{id} | Show BPay Account
-*OpenapiClient::BPayAccountsApi* | [**show_b_pay_account_user**](docs/BPayAccountsApi.md#show_b_pay_account_user) | **GET** /bpay_accounts/{id}/users | Show BPay Account User
-*OpenapiClient::BankAccountsApi* | [**create_bank_account**](docs/BankAccountsApi.md#create_bank_account) | **POST** /bank_accounts | Create Bank Account
-*OpenapiClient::BankAccountsApi* | [**redact_bank_account**](docs/BankAccountsApi.md#redact_bank_account) | **DELETE** /bank_accounts/{id} | Redact Bank Account
-*OpenapiClient::BankAccountsApi* | [**send_penny_amount**](docs/BankAccountsApi.md#send_penny_amount) | **PATCH** /bank_accounts/{id}/penny_send | Send Penny Amount
-*OpenapiClient::BankAccountsApi* | [**show_bank_account**](docs/BankAccountsApi.md#show_bank_account) | **GET** /bank_accounts/{id} | Show Bank Account
-*OpenapiClient::BankAccountsApi* | [**show_bank_account_user**](docs/BankAccountsApi.md#show_bank_account_user) | **GET** /bank_accounts/{id}/users | Show Bank Account User
-*OpenapiClient::BankAccountsApi* | [**validate_routing_number**](docs/BankAccountsApi.md#validate_routing_number) | **GET** /tools/routing_number | Validate Routing Number
-*OpenapiClient::BankAccountsApi* | [**verify_penny_amount**](docs/BankAccountsApi.md#verify_penny_amount) | **PATCH** /bank_accounts/{id}/penny_verify | Verify Penny Amount
-*OpenapiClient::BatchTransactionsApi* | [**list_batch_transactions**](docs/BatchTransactionsApi.md#list_batch_transactions) | **GET** /batch_transactions | List Batch Transactions
-*OpenapiClient::BatchTransactionsApi* | [**show_batch_transaction**](docs/BatchTransactionsApi.md#show_batch_transaction) | **GET** /batch_transactions/{id} | Show Batch Transaction
-*OpenapiClient::CallbacksApi* | [**create_callback**](docs/CallbacksApi.md#create_callback) | **POST** /callbacks | Create Callback
-*OpenapiClient::CallbacksApi* | [**delete_callback**](docs/CallbacksApi.md#delete_callback) | **DELETE** /callbacks/{id} | Delete Callback
-*OpenapiClient::CallbacksApi* | [**list_callback_response**](docs/CallbacksApi.md#list_callback_response) | **GET** /callbacks/{id}/responses | List Callback Responses
-*OpenapiClient::CallbacksApi* | [**list_callbacks**](docs/CallbacksApi.md#list_callbacks) | **GET** /callbacks | List Callbacks
-*OpenapiClient::CallbacksApi* | [**show_callback**](docs/CallbacksApi.md#show_callback) | **GET** /callbacks/{id} | Show Callback
-*OpenapiClient::CallbacksApi* | [**show_callback_response**](docs/CallbacksApi.md#show_callback_response) | **GET** /callbacks/{callback_id}/responses/{id} | Show Callback Response
-*OpenapiClient::CallbacksApi* | [**update_callback**](docs/CallbacksApi.md#update_callback) | **PATCH** /callbacks/{id} | Update Callback
-*OpenapiClient::CardAccountsApi* | [**create_card_account**](docs/CardAccountsApi.md#create_card_account) | **POST** /card_accounts | Create Card Account
-*OpenapiClient::CardAccountsApi* | [**redact_card_account**](docs/CardAccountsApi.md#redact_card_account) | **DELETE** /card_accounts/{id} | Redact Card Account
-*OpenapiClient::CardAccountsApi* | [**show_card_account**](docs/CardAccountsApi.md#show_card_account) | **GET** /card_accounts/{id} | Show Card Account
-*OpenapiClient::CardAccountsApi* | [**show_card_account_user**](docs/CardAccountsApi.md#show_card_account_user) | **GET** /card_accounts/{id}/users | Show Card Account User
-*OpenapiClient::CardAccountsApi* | [**verify_card**](docs/CardAccountsApi.md#verify_card) | **PATCH** /card_accounts/{id}/verify | Verify Card
-*OpenapiClient::ChargesApi* | [**create_charge**](docs/ChargesApi.md#create_charge) | **POST** /charges | Create Charge
-*OpenapiClient::ChargesApi* | [**list_charges**](docs/ChargesApi.md#list_charges) | **GET** /charges | List Charges
-*OpenapiClient::ChargesApi* | [**show_charge**](docs/ChargesApi.md#show_charge) | **GET** /charges/{id} | Show Charge
-*OpenapiClient::ChargesApi* | [**show_charge_buyer**](docs/ChargesApi.md#show_charge_buyer) | **GET** /charges/{id}/buyers | Show Charge Buyer
-*OpenapiClient::ChargesApi* | [**show_charge_status**](docs/ChargesApi.md#show_charge_status) | **GET** /charges/{id}/status | Show Charge Status
-*OpenapiClient::CompaniesApi* | [**create_company**](docs/CompaniesApi.md#create_company) | **POST** /companies | Create Company
-*OpenapiClient::CompaniesApi* | [**list_companies**](docs/CompaniesApi.md#list_companies) | **GET** /companies | List Companies
-*OpenapiClient::CompaniesApi* | [**show_company**](docs/CompaniesApi.md#show_company) | **GET** /companies/{id} | Show Company
-*OpenapiClient::CompaniesApi* | [**update_company**](docs/CompaniesApi.md#update_company) | **PATCH** /companies/{id} | Update Company
-*OpenapiClient::DirectDebitAuthoritiesApi* | [**create_direct_debit_authority**](docs/DirectDebitAuthoritiesApi.md#create_direct_debit_authority) | **POST** /direct_debit_authorities | Create Direct Debit Authority
-*OpenapiClient::DirectDebitAuthoritiesApi* | [**list_direct_debit_authorities**](docs/DirectDebitAuthoritiesApi.md#list_direct_debit_authorities) | **GET** /direct_debit_authorities | List Direct Debit Authorities
-*OpenapiClient::DirectDebitAuthoritiesApi* | [**show_direct_debit_authority**](docs/DirectDebitAuthoritiesApi.md#show_direct_debit_authority) | **GET** /direct_debit_authorities/{id} | Show Direct Debit Authority
-*OpenapiClient::DisbursementsApi* | [**list_disbursement**](docs/DisbursementsApi.md#list_disbursement) | **GET** /disbursements | List Disbursements
-*OpenapiClient::DisbursementsApi* | [**show_disbursement**](docs/DisbursementsApi.md#show_disbursement) | **GET** /disbursements/{id} | Show Disbursement
-*OpenapiClient::DisbursementsApi* | [**show_disbursement_bank_accounts**](docs/DisbursementsApi.md#show_disbursement_bank_accounts) | **GET** /disbursements/{id}/bank_accounts | Show Disbursement Bank Accounts
-*OpenapiClient::DisbursementsApi* | [**show_disbursement_items**](docs/DisbursementsApi.md#show_disbursement_items) | **GET** /disbursements/{id}/items | Show Disbursement Items
-*OpenapiClient::DisbursementsApi* | [**show_disbursement_transactions**](docs/DisbursementsApi.md#show_disbursement_transactions) | **GET** /disbursements/{id}/transactions | Show Disbursement Transactions
-*OpenapiClient::DisbursementsApi* | [**show_disbursement_users**](docs/DisbursementsApi.md#show_disbursement_users) | **GET** /disbursements/{id}/users | Show Disbursement Users
-*OpenapiClient::DisbursementsApi* | [**show_disbursement_wallet_accounts**](docs/DisbursementsApi.md#show_disbursement_wallet_accounts) | **GET** /disbursements/{id}/wallet_accounts | Show Disbursement Wallet Accounts
-*OpenapiClient::FeesApi* | [**create_fee**](docs/FeesApi.md#create_fee) | **POST** /fees | Create fee
-*OpenapiClient::FeesApi* | [**list_fees**](docs/FeesApi.md#list_fees) | **GET** /fees | List Fees
-*OpenapiClient::FeesApi* | [**show_fee**](docs/FeesApi.md#show_fee) | **GET** /fees/{id} | Show Fee
-*OpenapiClient::ItemActionsApi* | [**authorize_payment**](docs/ItemActionsApi.md#authorize_payment) | **PATCH** /items/{id}/authorize_payment | Authorize Payment
-*OpenapiClient::ItemActionsApi* | [**cancel_item**](docs/ItemActionsApi.md#cancel_item) | **PATCH** /items/{id}/cancel | Cancel
-*OpenapiClient::ItemActionsApi* | [**capture_payment**](docs/ItemActionsApi.md#capture_payment) | **PATCH** /items/{id}/capture_payment | Capture Payment
-*OpenapiClient::ItemActionsApi* | [**make_payment**](docs/ItemActionsApi.md#make_payment) | **PATCH** /items/{id}/make_payment | Make Payment
-*OpenapiClient::ItemActionsApi* | [**refund**](docs/ItemActionsApi.md#refund) | **PATCH** /items/{id}/refund | Refund
-*OpenapiClient::ItemActionsApi* | [**release_payment**](docs/ItemActionsApi.md#release_payment) | **PATCH** /items/{id}/release_payment | Release Payment (Deprecated - Do Not Use)
-*OpenapiClient::ItemActionsApi* | [**void_payment**](docs/ItemActionsApi.md#void_payment) | **PATCH** /items/{id}/void_payment | Void Payment
-*OpenapiClient::ItemsApi* | [**create_item**](docs/ItemsApi.md#create_item) | **POST** /items | Create Item
-*OpenapiClient::ItemsApi* | [**delete_item**](docs/ItemsApi.md#delete_item) | **DELETE** /items/{id} | Delete Item
-*OpenapiClient::ItemsApi* | [**list_item_batch_transactions**](docs/ItemsApi.md#list_item_batch_transactions) | **GET** /items/{id}/batch_transactions | List Item Batch Transactions
-*OpenapiClient::ItemsApi* | [**list_item_transactions**](docs/ItemsApi.md#list_item_transactions) | **GET** /items/{id}/transactions | List Item Transactions
-*OpenapiClient::ItemsApi* | [**list_items**](docs/ItemsApi.md#list_items) | **GET** /items | List Items
-*OpenapiClient::ItemsApi* | [**show_item**](docs/ItemsApi.md#show_item) | **GET** /items/{id} | Show Item
-*OpenapiClient::ItemsApi* | [**show_item_buyer**](docs/ItemsApi.md#show_item_buyer) | **GET** /items/{id}/buyers | Show Item Buyer
-*OpenapiClient::ItemsApi* | [**show_item_fees**](docs/ItemsApi.md#show_item_fees) | **GET** /items/{id}/fees | Show Item Fees
-*OpenapiClient::ItemsApi* | [**show_item_seller**](docs/ItemsApi.md#show_item_seller) | **GET** /items/{id}/sellers | Show Item Seller
-*OpenapiClient::ItemsApi* | [**show_item_status**](docs/ItemsApi.md#show_item_status) | **GET** /items/{id}/status | Show Item Status
-*OpenapiClient::ItemsApi* | [**show_item_wire_details**](docs/ItemsApi.md#show_item_wire_details) | **GET** /items/{id}/wire_details | Show Item Wire Details
-*OpenapiClient::ItemsApi* | [**update_item**](docs/ItemsApi.md#update_item) | **PATCH** /items/{id} | Update Item
-*OpenapiClient::MarketplacesApi* | [**show_marketplace**](docs/MarketplacesApi.md#show_marketplace) | **GET** /marketplace | Show Marketplace
-*OpenapiClient::TokenAuthApi* | [**generate_token**](docs/TokenAuthApi.md#generate_token) | **POST** /token_auths | Generate Token
-*OpenapiClient::ToolsApi* | [**health_check**](docs/ToolsApi.md#health_check) | **GET** /tools/status | Health check
-*OpenapiClient::TransactionsApi* | [**list_transactions**](docs/TransactionsApi.md#list_transactions) | **GET** /transactions | List Transactions
-*OpenapiClient::TransactionsApi* | [**show_transaction**](docs/TransactionsApi.md#show_transaction) | **GET** /transactions/{id} | Show Transaction
-*OpenapiClient::TransactionsApi* | [**show_transaction_bank_account**](docs/TransactionsApi.md#show_transaction_bank_account) | **GET** /transactions/{id}/bank_accounts | Show Transaction Bank Account
-*OpenapiClient::TransactionsApi* | [**show_transaction_card_account**](docs/TransactionsApi.md#show_transaction_card_account) | **GET** /transactions/{id}/card_accounts | Show Transaction Card Account
-*OpenapiClient::TransactionsApi* | [**show_transaction_fees**](docs/TransactionsApi.md#show_transaction_fees) | **GET** /transactions/{id}/fees | Show Transaction Fees
-*OpenapiClient::TransactionsApi* | [**show_transaction_user**](docs/TransactionsApi.md#show_transaction_user) | **GET** /transactions/{id}/users | Show Transaction User
-*OpenapiClient::TransactionsApi* | [**show_transaction_wallet_account**](docs/TransactionsApi.md#show_transaction_wallet_account) | **GET** /transactions/{id}/wallet_accounts | Show Transaction Wallet Account
-*OpenapiClient::UsersApi* | [**create_user**](docs/UsersApi.md#create_user) | **POST** /users | Create User
-*OpenapiClient::UsersApi* | [**list_user_b_pay_accounts**](docs/UsersApi.md#list_user_b_pay_accounts) | **GET** /users/{id}/bpay_accounts | List User's BPay Accounts
-*OpenapiClient::UsersApi* | [**list_user_items**](docs/UsersApi.md#list_user_items) | **GET** /users/{id}/items | List User Items
-*OpenapiClient::UsersApi* | [**list_users**](docs/UsersApi.md#list_users) | **GET** /users | List Users
-*OpenapiClient::UsersApi* | [**set_user_disbursement_account**](docs/UsersApi.md#set_user_disbursement_account) | **PATCH** /users/{id}/disbursement_account | Set User Disbursement Account
-*OpenapiClient::UsersApi* | [**show_user**](docs/UsersApi.md#show_user) | **GET** /users/{id} | Show User
-*OpenapiClient::UsersApi* | [**show_user_bank_account**](docs/UsersApi.md#show_user_bank_account) | **GET** /users/{id}/bank_accounts | Show User Bank Account
-*OpenapiClient::UsersApi* | [**show_user_card_account**](docs/UsersApi.md#show_user_card_account) | **GET** /users/{id}/card_accounts | Show User Card Account
-*OpenapiClient::UsersApi* | [**show_user_wallet_accounts**](docs/UsersApi.md#show_user_wallet_accounts) | **GET** /users/{id}/wallet_accounts | Show User Wallet Account
-*OpenapiClient::UsersApi* | [**update_user**](docs/UsersApi.md#update_user) | **PATCH** /users/{id} | Update User
-*OpenapiClient::UsersApi* | [**verify_user**](docs/UsersApi.md#verify_user) | **PATCH** /users/{id}/identity_verified | Verify User (Prelive Only)
-*OpenapiClient::WalletAccountsApi* | [**bill_payment**](docs/WalletAccountsApi.md#bill_payment) | **POST** /wallet_accounts/{id}/bill_payment | Pay a Bill
-*OpenapiClient::WalletAccountsApi* | [**show_wallet_account**](docs/WalletAccountsApi.md#show_wallet_account) | **GET** /wallet_accounts/{id} | Show Wallet Account
-*OpenapiClient::WalletAccountsApi* | [**show_wallet_account_nbpay_details**](docs/WalletAccountsApi.md#show_wallet_account_nbpay_details) | **GET** /wallet_accounts/{id}/bpay_details | Show Wallet Account BPAY Details
-*OpenapiClient::WalletAccountsApi* | [**show_wallet_account_npp_details**](docs/WalletAccountsApi.md#show_wallet_account_npp_details) | **GET** /wallet_accounts/{id}/npp_details | Show Wallet Account NPP Details
-*OpenapiClient::WalletAccountsApi* | [**show_wallet_account_user**](docs/WalletAccountsApi.md#show_wallet_account_user) | **GET** /wallet_accounts/{id}/users | Show Wallet Account User
-*OpenapiClient::WalletAccountsApi* | [**withdraw_funds**](docs/WalletAccountsApi.md#withdraw_funds) | **POST** /wallet_accounts/{id}/withdraw | Withdraw Funds
+*AssemblyPayments::AddressesApi* | [**show_address**](docs/AddressesApi.md#show_address) | **GET** /addresses/{id} | Show Address
+*AssemblyPayments::AuthenticationApi* | [**token**](docs/AuthenticationApi.md#token) | **POST** /tokens | Token
+*AssemblyPayments::BPayAccountsApi* | [**create_b_pay_account**](docs/BPayAccountsApi.md#create_b_pay_account) | **POST** /bpay_accounts | Create BPay Account
+*AssemblyPayments::BPayAccountsApi* | [**redact_b_pay_account**](docs/BPayAccountsApi.md#redact_b_pay_account) | **DELETE** /bpay_accounts/{id} | Redact BPay Account (Future Feature)
+*AssemblyPayments::BPayAccountsApi* | [**show_b_pay_account**](docs/BPayAccountsApi.md#show_b_pay_account) | **GET** /bpay_accounts/{id} | Show BPay Account
+*AssemblyPayments::BPayAccountsApi* | [**show_b_pay_account_user**](docs/BPayAccountsApi.md#show_b_pay_account_user) | **GET** /bpay_accounts/{id}/users | Show BPay Account User
+*AssemblyPayments::BankAccountsApi* | [**create_bank_account**](docs/BankAccountsApi.md#create_bank_account) | **POST** /bank_accounts | Create Bank Account
+*AssemblyPayments::BankAccountsApi* | [**redact_bank_account**](docs/BankAccountsApi.md#redact_bank_account) | **DELETE** /bank_accounts/{id} | Redact Bank Account
+*AssemblyPayments::BankAccountsApi* | [**send_penny_amount**](docs/BankAccountsApi.md#send_penny_amount) | **PATCH** /bank_accounts/{id}/penny_send | Send Penny Amount
+*AssemblyPayments::BankAccountsApi* | [**show_bank_account**](docs/BankAccountsApi.md#show_bank_account) | **GET** /bank_accounts/{id} | Show Bank Account
+*AssemblyPayments::BankAccountsApi* | [**show_bank_account_user**](docs/BankAccountsApi.md#show_bank_account_user) | **GET** /bank_accounts/{id}/users | Show Bank Account User
+*AssemblyPayments::BankAccountsApi* | [**validate_routing_number**](docs/BankAccountsApi.md#validate_routing_number) | **GET** /tools/routing_number | Validate Routing Number
+*AssemblyPayments::BankAccountsApi* | [**verify_penny_amount**](docs/BankAccountsApi.md#verify_penny_amount) | **PATCH** /bank_accounts/{id}/penny_verify | Verify Penny Amount
+*AssemblyPayments::BatchTransactionsApi* | [**list_batch_transactions**](docs/BatchTransactionsApi.md#list_batch_transactions) | **GET** /batch_transactions | List Batch Transactions
+*AssemblyPayments::BatchTransactionsApi* | [**show_batch_transaction**](docs/BatchTransactionsApi.md#show_batch_transaction) | **GET** /batch_transactions/{id} | Show Batch Transaction
+*AssemblyPayments::CallbacksApi* | [**create_callback**](docs/CallbacksApi.md#create_callback) | **POST** /callbacks | Create Callback
+*AssemblyPayments::CallbacksApi* | [**delete_callback**](docs/CallbacksApi.md#delete_callback) | **DELETE** /callbacks/{id} | Delete Callback
+*AssemblyPayments::CallbacksApi* | [**list_callback_response**](docs/CallbacksApi.md#list_callback_response) | **GET** /callbacks/{id}/responses | List Callback Responses
+*AssemblyPayments::CallbacksApi* | [**list_callbacks**](docs/CallbacksApi.md#list_callbacks) | **GET** /callbacks | List Callbacks
+*AssemblyPayments::CallbacksApi* | [**show_callback**](docs/CallbacksApi.md#show_callback) | **GET** /callbacks/{id} | Show Callback
+*AssemblyPayments::CallbacksApi* | [**show_callback_response**](docs/CallbacksApi.md#show_callback_response) | **GET** /callbacks/{callback_id}/responses/{id} | Show Callback Response
+*AssemblyPayments::CallbacksApi* | [**update_callback**](docs/CallbacksApi.md#update_callback) | **PATCH** /callbacks/{id} | Update Callback
+*AssemblyPayments::CardAccountsApi* | [**create_card_account**](docs/CardAccountsApi.md#create_card_account) | **POST** /card_accounts | Create Card Account
+*AssemblyPayments::CardAccountsApi* | [**redact_card_account**](docs/CardAccountsApi.md#redact_card_account) | **DELETE** /card_accounts/{id} | Redact Card Account
+*AssemblyPayments::CardAccountsApi* | [**show_card_account**](docs/CardAccountsApi.md#show_card_account) | **GET** /card_accounts/{id} | Show Card Account
+*AssemblyPayments::CardAccountsApi* | [**show_card_account_user**](docs/CardAccountsApi.md#show_card_account_user) | **GET** /card_accounts/{id}/users | Show Card Account User
+*AssemblyPayments::CardAccountsApi* | [**verify_card**](docs/CardAccountsApi.md#verify_card) | **PATCH** /card_accounts/{id}/verify | Verify Card
+*AssemblyPayments::ChargesApi* | [**create_charge**](docs/ChargesApi.md#create_charge) | **POST** /charges | Create Charge
+*AssemblyPayments::ChargesApi* | [**list_charges**](docs/ChargesApi.md#list_charges) | **GET** /charges | List Charges
+*AssemblyPayments::ChargesApi* | [**show_charge**](docs/ChargesApi.md#show_charge) | **GET** /charges/{id} | Show Charge
+*AssemblyPayments::ChargesApi* | [**show_charge_buyer**](docs/ChargesApi.md#show_charge_buyer) | **GET** /charges/{id}/buyers | Show Charge Buyer
+*AssemblyPayments::ChargesApi* | [**show_charge_status**](docs/ChargesApi.md#show_charge_status) | **GET** /charges/{id}/status | Show Charge Status
+*AssemblyPayments::CompaniesApi* | [**create_company**](docs/CompaniesApi.md#create_company) | **POST** /companies | Create Company
+*AssemblyPayments::CompaniesApi* | [**list_companies**](docs/CompaniesApi.md#list_companies) | **GET** /companies | List Companies
+*AssemblyPayments::CompaniesApi* | [**show_company**](docs/CompaniesApi.md#show_company) | **GET** /companies/{id} | Show Company
+*AssemblyPayments::CompaniesApi* | [**update_company**](docs/CompaniesApi.md#update_company) | **PATCH** /companies/{id} | Update Company
+*AssemblyPayments::DirectDebitAuthoritiesApi* | [**create_direct_debit_authority**](docs/DirectDebitAuthoritiesApi.md#create_direct_debit_authority) | **POST** /direct_debit_authorities | Create Direct Debit Authority
+*AssemblyPayments::DirectDebitAuthoritiesApi* | [**list_direct_debit_authorities**](docs/DirectDebitAuthoritiesApi.md#list_direct_debit_authorities) | **GET** /direct_debit_authorities | List Direct Debit Authorities
+*AssemblyPayments::DirectDebitAuthoritiesApi* | [**show_direct_debit_authority**](docs/DirectDebitAuthoritiesApi.md#show_direct_debit_authority) | **GET** /direct_debit_authorities/{id} | Show Direct Debit Authority
+*AssemblyPayments::DisbursementsApi* | [**list_disbursement**](docs/DisbursementsApi.md#list_disbursement) | **GET** /disbursements | List Disbursements
+*AssemblyPayments::DisbursementsApi* | [**show_disbursement**](docs/DisbursementsApi.md#show_disbursement) | **GET** /disbursements/{id} | Show Disbursement
+*AssemblyPayments::DisbursementsApi* | [**show_disbursement_bank_accounts**](docs/DisbursementsApi.md#show_disbursement_bank_accounts) | **GET** /disbursements/{id}/bank_accounts | Show Disbursement Bank Accounts
+*AssemblyPayments::DisbursementsApi* | [**show_disbursement_items**](docs/DisbursementsApi.md#show_disbursement_items) | **GET** /disbursements/{id}/items | Show Disbursement Items
+*AssemblyPayments::DisbursementsApi* | [**show_disbursement_transactions**](docs/DisbursementsApi.md#show_disbursement_transactions) | **GET** /disbursements/{id}/transactions | Show Disbursement Transactions
+*AssemblyPayments::DisbursementsApi* | [**show_disbursement_users**](docs/DisbursementsApi.md#show_disbursement_users) | **GET** /disbursements/{id}/users | Show Disbursement Users
+*AssemblyPayments::DisbursementsApi* | [**show_disbursement_wallet_accounts**](docs/DisbursementsApi.md#show_disbursement_wallet_accounts) | **GET** /disbursements/{id}/wallet_accounts | Show Disbursement Wallet Accounts
+*AssemblyPayments::FeesApi* | [**create_fee**](docs/FeesApi.md#create_fee) | **POST** /fees | Create fee
+*AssemblyPayments::FeesApi* | [**list_fees**](docs/FeesApi.md#list_fees) | **GET** /fees | List Fees
+*AssemblyPayments::FeesApi* | [**show_fee**](docs/FeesApi.md#show_fee) | **GET** /fees/{id} | Show Fee
+*AssemblyPayments::ItemActionsApi* | [**authorize_payment**](docs/ItemActionsApi.md#authorize_payment) | **PATCH** /items/{id}/authorize_payment | Authorize Payment
+*AssemblyPayments::ItemActionsApi* | [**cancel_item**](docs/ItemActionsApi.md#cancel_item) | **PATCH** /items/{id}/cancel | Cancel
+*AssemblyPayments::ItemActionsApi* | [**capture_payment**](docs/ItemActionsApi.md#capture_payment) | **PATCH** /items/{id}/capture_payment | Capture Payment
+*AssemblyPayments::ItemActionsApi* | [**make_payment**](docs/ItemActionsApi.md#make_payment) | **PATCH** /items/{id}/make_payment | Make Payment
+*AssemblyPayments::ItemActionsApi* | [**refund**](docs/ItemActionsApi.md#refund) | **PATCH** /items/{id}/refund | Refund
+*AssemblyPayments::ItemActionsApi* | [**release_payment**](docs/ItemActionsApi.md#release_payment) | **PATCH** /items/{id}/release_payment | Release Payment (Deprecated - Do Not Use)
+*AssemblyPayments::ItemActionsApi* | [**void_payment**](docs/ItemActionsApi.md#void_payment) | **PATCH** /items/{id}/void_payment | Void Payment
+*AssemblyPayments::ItemsApi* | [**create_item**](docs/ItemsApi.md#create_item) | **POST** /items | Create Item
+*AssemblyPayments::ItemsApi* | [**delete_item**](docs/ItemsApi.md#delete_item) | **DELETE** /items/{id} | Delete Item
+*AssemblyPayments::ItemsApi* | [**list_item_batch_transactions**](docs/ItemsApi.md#list_item_batch_transactions) | **GET** /items/{id}/batch_transactions | List Item Batch Transactions
+*AssemblyPayments::ItemsApi* | [**list_item_transactions**](docs/ItemsApi.md#list_item_transactions) | **GET** /items/{id}/transactions | List Item Transactions
+*AssemblyPayments::ItemsApi* | [**list_items**](docs/ItemsApi.md#list_items) | **GET** /items | List Items
+*AssemblyPayments::ItemsApi* | [**show_item**](docs/ItemsApi.md#show_item) | **GET** /items/{id} | Show Item
+*AssemblyPayments::ItemsApi* | [**show_item_buyer**](docs/ItemsApi.md#show_item_buyer) | **GET** /items/{id}/buyers | Show Item Buyer
+*AssemblyPayments::ItemsApi* | [**show_item_fees**](docs/ItemsApi.md#show_item_fees) | **GET** /items/{id}/fees | Show Item Fees
+*AssemblyPayments::ItemsApi* | [**show_item_seller**](docs/ItemsApi.md#show_item_seller) | **GET** /items/{id}/sellers | Show Item Seller
+*AssemblyPayments::ItemsApi* | [**show_item_status**](docs/ItemsApi.md#show_item_status) | **GET** /items/{id}/status | Show Item Status
+*AssemblyPayments::ItemsApi* | [**show_item_wire_details**](docs/ItemsApi.md#show_item_wire_details) | **GET** /items/{id}/wire_details | Show Item Wire Details
+*AssemblyPayments::ItemsApi* | [**update_item**](docs/ItemsApi.md#update_item) | **PATCH** /items/{id} | Update Item
+*AssemblyPayments::MarketplacesApi* | [**show_marketplace**](docs/MarketplacesApi.md#show_marketplace) | **GET** /marketplace | Show Marketplace
+*AssemblyPayments::TokenAuthApi* | [**generate_token**](docs/TokenAuthApi.md#generate_token) | **POST** /token_auths | Generate Token
+*AssemblyPayments::ToolsApi* | [**health_check**](docs/ToolsApi.md#health_check) | **GET** /tools/status | Health check
+*AssemblyPayments::TransactionsApi* | [**list_transactions**](docs/TransactionsApi.md#list_transactions) | **GET** /transactions | List Transactions
+*AssemblyPayments::TransactionsApi* | [**show_transaction**](docs/TransactionsApi.md#show_transaction) | **GET** /transactions/{id} | Show Transaction
+*AssemblyPayments::TransactionsApi* | [**show_transaction_bank_account**](docs/TransactionsApi.md#show_transaction_bank_account) | **GET** /transactions/{id}/bank_accounts | Show Transaction Bank Account
+*AssemblyPayments::TransactionsApi* | [**show_transaction_card_account**](docs/TransactionsApi.md#show_transaction_card_account) | **GET** /transactions/{id}/card_accounts | Show Transaction Card Account
+*AssemblyPayments::TransactionsApi* | [**show_transaction_fees**](docs/TransactionsApi.md#show_transaction_fees) | **GET** /transactions/{id}/fees | Show Transaction Fees
+*AssemblyPayments::TransactionsApi* | [**show_transaction_user**](docs/TransactionsApi.md#show_transaction_user) | **GET** /transactions/{id}/users | Show Transaction User
+*AssemblyPayments::TransactionsApi* | [**show_transaction_wallet_account**](docs/TransactionsApi.md#show_transaction_wallet_account) | **GET** /transactions/{id}/wallet_accounts | Show Transaction Wallet Account
+*AssemblyPayments::UsersApi* | [**create_user**](docs/UsersApi.md#create_user) | **POST** /users | Create User
+*AssemblyPayments::UsersApi* | [**list_user_b_pay_accounts**](docs/UsersApi.md#list_user_b_pay_accounts) | **GET** /users/{id}/bpay_accounts | List User's BPay Accounts
+*AssemblyPayments::UsersApi* | [**list_user_items**](docs/UsersApi.md#list_user_items) | **GET** /users/{id}/items | List User Items
+*AssemblyPayments::UsersApi* | [**list_users**](docs/UsersApi.md#list_users) | **GET** /users | List Users
+*AssemblyPayments::UsersApi* | [**set_user_disbursement_account**](docs/UsersApi.md#set_user_disbursement_account) | **PATCH** /users/{id}/disbursement_account | Set User Disbursement Account
+*AssemblyPayments::UsersApi* | [**show_user**](docs/UsersApi.md#show_user) | **GET** /users/{id} | Show User
+*AssemblyPayments::UsersApi* | [**show_user_bank_account**](docs/UsersApi.md#show_user_bank_account) | **GET** /users/{id}/bank_accounts | Show User Bank Account
+*AssemblyPayments::UsersApi* | [**show_user_card_account**](docs/UsersApi.md#show_user_card_account) | **GET** /users/{id}/card_accounts | Show User Card Account
+*AssemblyPayments::UsersApi* | [**show_user_wallet_accounts**](docs/UsersApi.md#show_user_wallet_accounts) | **GET** /users/{id}/wallet_accounts | Show User Wallet Account
+*AssemblyPayments::UsersApi* | [**update_user**](docs/UsersApi.md#update_user) | **PATCH** /users/{id} | Update User
+*AssemblyPayments::UsersApi* | [**verify_user**](docs/UsersApi.md#verify_user) | **PATCH** /users/{id}/identity_verified | Verify User (Prelive Only)
+*AssemblyPayments::WalletAccountsApi* | [**bill_payment**](docs/WalletAccountsApi.md#bill_payment) | **POST** /wallet_accounts/{id}/bill_payment | Pay a Bill
+*AssemblyPayments::WalletAccountsApi* | [**show_wallet_account**](docs/WalletAccountsApi.md#show_wallet_account) | **GET** /wallet_accounts/{id} | Show Wallet Account
+*AssemblyPayments::WalletAccountsApi* | [**show_wallet_account_nbpay_details**](docs/WalletAccountsApi.md#show_wallet_account_nbpay_details) | **GET** /wallet_accounts/{id}/bpay_details | Show Wallet Account BPAY Details
+*AssemblyPayments::WalletAccountsApi* | [**show_wallet_account_npp_details**](docs/WalletAccountsApi.md#show_wallet_account_npp_details) | **GET** /wallet_accounts/{id}/npp_details | Show Wallet Account NPP Details
+*AssemblyPayments::WalletAccountsApi* | [**show_wallet_account_user**](docs/WalletAccountsApi.md#show_wallet_account_user) | **GET** /wallet_accounts/{id}/users | Show Wallet Account User
+*AssemblyPayments::WalletAccountsApi* | [**withdraw_funds**](docs/WalletAccountsApi.md#withdraw_funds) | **POST** /wallet_accounts/{id}/withdraw | Withdraw Funds
 
 
 ## Documentation for Models
 
- - [OpenapiClient::Account](docs/Account.md)
- - [OpenapiClient::AccountIdRequestBody](docs/AccountIdRequestBody.md)
- - [OpenapiClient::Address](docs/Address.md)
- - [OpenapiClient::AddressAddresses](docs/AddressAddresses.md)
- - [OpenapiClient::AddressAddressesLinks](docs/AddressAddressesLinks.md)
- - [OpenapiClient::BankAccount](docs/BankAccount.md)
- - [OpenapiClient::BankAccountBankAccounts](docs/BankAccountBankAccounts.md)
- - [OpenapiClient::BankAccountBankAccountsBank](docs/BankAccountBankAccountsBank.md)
- - [OpenapiClient::BankAccountBankAccountsLinks](docs/BankAccountBankAccountsLinks.md)
- - [OpenapiClient::BankAccountDeletion](docs/BankAccountDeletion.md)
- - [OpenapiClient::BankAccountIdRequestBody](docs/BankAccountIdRequestBody.md)
- - [OpenapiClient::BankAccountRequestBody](docs/BankAccountRequestBody.md)
- - [OpenapiClient::BatchTransaction](docs/BatchTransaction.md)
- - [OpenapiClient::BatchTransactionAccountExternal](docs/BatchTransactionAccountExternal.md)
- - [OpenapiClient::BatchTransactionAccountExternalCurrency](docs/BatchTransactionAccountExternalCurrency.md)
- - [OpenapiClient::BatchTransactionAddressCountry](docs/BatchTransactionAddressCountry.md)
- - [OpenapiClient::BatchTransactionItem](docs/BatchTransactionItem.md)
- - [OpenapiClient::BatchTransactionLinks](docs/BatchTransactionLinks.md)
- - [OpenapiClient::BatchTransactionMarketplace](docs/BatchTransactionMarketplace.md)
- - [OpenapiClient::BatchTransactionRelated](docs/BatchTransactionRelated.md)
- - [OpenapiClient::BatchTransactionRelatedAccountTo](docs/BatchTransactionRelatedAccountTo.md)
- - [OpenapiClient::BillPaymentRequestBody](docs/BillPaymentRequestBody.md)
- - [OpenapiClient::BpayAccount](docs/BpayAccount.md)
- - [OpenapiClient::BpayAccountDeletion](docs/BpayAccountDeletion.md)
- - [OpenapiClient::BpayAccountRequestBody](docs/BpayAccountRequestBody.md)
- - [OpenapiClient::BpayDetails](docs/BpayDetails.md)
- - [OpenapiClient::BpayDetailsWithId](docs/BpayDetailsWithId.md)
- - [OpenapiClient::Callback](docs/Callback.md)
- - [OpenapiClient::CallbackDeletion](docs/CallbackDeletion.md)
- - [OpenapiClient::CallbackLinks](docs/CallbackLinks.md)
- - [OpenapiClient::CallbackRequestBody](docs/CallbackRequestBody.md)
- - [OpenapiClient::CallbackResponse](docs/CallbackResponse.md)
- - [OpenapiClient::CallbackResponsePayload](docs/CallbackResponsePayload.md)
- - [OpenapiClient::CallbackResponseResponse](docs/CallbackResponseResponse.md)
- - [OpenapiClient::Callbacks](docs/Callbacks.md)
- - [OpenapiClient::CardAccount](docs/CardAccount.md)
- - [OpenapiClient::CardAccountCardAccounts](docs/CardAccountCardAccounts.md)
- - [OpenapiClient::CardAccountCardAccountsCard](docs/CardAccountCardAccountsCard.md)
- - [OpenapiClient::CardAccountCardAccountsLinks](docs/CardAccountCardAccountsLinks.md)
- - [OpenapiClient::CardAccountDeletion](docs/CardAccountDeletion.md)
- - [OpenapiClient::CardAccountIdRequestBody](docs/CardAccountIdRequestBody.md)
- - [OpenapiClient::CardAccountRequestBody](docs/CardAccountRequestBody.md)
- - [OpenapiClient::CardAccountVerifyRequestBody](docs/CardAccountVerifyRequestBody.md)
- - [OpenapiClient::Charge](docs/Charge.md)
- - [OpenapiClient::ChargeLinks](docs/ChargeLinks.md)
- - [OpenapiClient::ChargeRequestBody](docs/ChargeRequestBody.md)
- - [OpenapiClient::ChargeStatus](docs/ChargeStatus.md)
- - [OpenapiClient::Charges](docs/Charges.md)
- - [OpenapiClient::Company](docs/Company.md)
- - [OpenapiClient::CompanyRelated](docs/CompanyRelated.md)
- - [OpenapiClient::CompanyRequestBody](docs/CompanyRequestBody.md)
- - [OpenapiClient::CompanySelf](docs/CompanySelf.md)
- - [OpenapiClient::DepositRequestBody](docs/DepositRequestBody.md)
- - [OpenapiClient::DirectDebitAuthority](docs/DirectDebitAuthority.md)
- - [OpenapiClient::DirectDebitAuthorityLinks](docs/DirectDebitAuthorityLinks.md)
- - [OpenapiClient::DirectDebitAuthorityRelated](docs/DirectDebitAuthorityRelated.md)
- - [OpenapiClient::DirectDebitAuthorityRequestBody](docs/DirectDebitAuthorityRequestBody.md)
- - [OpenapiClient::Disbursement](docs/Disbursement.md)
- - [OpenapiClient::DisbursementLinks](docs/DisbursementLinks.md)
- - [OpenapiClient::Disbursements](docs/Disbursements.md)
- - [OpenapiClient::Error](docs/Error.md)
- - [OpenapiClient::Fee](docs/Fee.md)
- - [OpenapiClient::FeeRequestBody](docs/FeeRequestBody.md)
- - [OpenapiClient::Fees](docs/Fees.md)
- - [OpenapiClient::Item](docs/Item.md)
- - [OpenapiClient::ItemLinks](docs/ItemLinks.md)
- - [OpenapiClient::ItemRelated](docs/ItemRelated.md)
- - [OpenapiClient::ItemRequestBody](docs/ItemRequestBody.md)
- - [OpenapiClient::Items](docs/Items.md)
- - [OpenapiClient::ListBatchTransactions](docs/ListBatchTransactions.md)
- - [OpenapiClient::ListBpayAccounts](docs/ListBpayAccounts.md)
- - [OpenapiClient::ListBpayAccountsBpayAccounts](docs/ListBpayAccountsBpayAccounts.md)
- - [OpenapiClient::ListBpayAccountsBpayDetails](docs/ListBpayAccountsBpayDetails.md)
- - [OpenapiClient::ListBpayAccountsLinks](docs/ListBpayAccountsLinks.md)
- - [OpenapiClient::ListBpayAccountsMeta](docs/ListBpayAccountsMeta.md)
- - [OpenapiClient::ListCallbackResponses](docs/ListCallbackResponses.md)
- - [OpenapiClient::ListCallbackResponsesLinks](docs/ListCallbackResponsesLinks.md)
- - [OpenapiClient::ListDirectDebitAuthorities](docs/ListDirectDebitAuthorities.md)
- - [OpenapiClient::Marketplace](docs/Marketplace.md)
- - [OpenapiClient::MarketplaceMarketplaces](docs/MarketplaceMarketplaces.md)
- - [OpenapiClient::MarketplaceMarketplacesBusinessInformation](docs/MarketplaceMarketplacesBusinessInformation.md)
- - [OpenapiClient::MarketplaceMarketplacesLinks](docs/MarketplaceMarketplacesLinks.md)
- - [OpenapiClient::MarketplaceMarketplacesRelated](docs/MarketplaceMarketplacesRelated.md)
- - [OpenapiClient::PennyVerifyRequestBody](docs/PennyVerifyRequestBody.md)
- - [OpenapiClient::RefundRequestBody](docs/RefundRequestBody.md)
- - [OpenapiClient::ReleasePaymentRequestBody](docs/ReleasePaymentRequestBody.md)
- - [OpenapiClient::SimpleCompanies](docs/SimpleCompanies.md)
- - [OpenapiClient::SimpleCompany](docs/SimpleCompany.md)
- - [OpenapiClient::SingleBatchTransaction](docs/SingleBatchTransaction.md)
- - [OpenapiClient::SingleBpayDetailsWithId](docs/SingleBpayDetailsWithId.md)
- - [OpenapiClient::SingleCallback](docs/SingleCallback.md)
- - [OpenapiClient::SingleCallbackResponse](docs/SingleCallbackResponse.md)
- - [OpenapiClient::SingleCharge](docs/SingleCharge.md)
- - [OpenapiClient::SingleChargeStatus](docs/SingleChargeStatus.md)
- - [OpenapiClient::SingleCompany](docs/SingleCompany.md)
- - [OpenapiClient::SingleDirectDebitAuthority](docs/SingleDirectDebitAuthority.md)
- - [OpenapiClient::SingleDisbursement](docs/SingleDisbursement.md)
- - [OpenapiClient::SingleFee](docs/SingleFee.md)
- - [OpenapiClient::SingleItem](docs/SingleItem.md)
- - [OpenapiClient::SingleRoutingNumber](docs/SingleRoutingNumber.md)
- - [OpenapiClient::SingleRoutingNumberRoutingNumber](docs/SingleRoutingNumberRoutingNumber.md)
- - [OpenapiClient::SingleStatus](docs/SingleStatus.md)
- - [OpenapiClient::SingleTransaction](docs/SingleTransaction.md)
- - [OpenapiClient::SingleUser](docs/SingleUser.md)
- - [OpenapiClient::SingleWireDetailsWithId](docs/SingleWireDetailsWithId.md)
- - [OpenapiClient::Status](docs/Status.md)
- - [OpenapiClient::TokenAuthRequestBody](docs/TokenAuthRequestBody.md)
- - [OpenapiClient::TokensRequestBody](docs/TokensRequestBody.md)
- - [OpenapiClient::TokensResponse](docs/TokensResponse.md)
- - [OpenapiClient::ToolsStatus](docs/ToolsStatus.md)
- - [OpenapiClient::Transaction](docs/Transaction.md)
- - [OpenapiClient::TransactionLinks](docs/TransactionLinks.md)
- - [OpenapiClient::TransactionMarketplace](docs/TransactionMarketplace.md)
- - [OpenapiClient::TransactionPayeeDetails](docs/TransactionPayeeDetails.md)
- - [OpenapiClient::TransactionRelated](docs/TransactionRelated.md)
- - [OpenapiClient::TransactionRelatedTransactions](docs/TransactionRelatedTransactions.md)
- - [OpenapiClient::Transactions](docs/Transactions.md)
- - [OpenapiClient::UpdateItemRequestBody](docs/UpdateItemRequestBody.md)
- - [OpenapiClient::UpdateUserRequestBody](docs/UpdateUserRequestBody.md)
- - [OpenapiClient::User](docs/User.md)
- - [OpenapiClient::UserLinks](docs/UserLinks.md)
- - [OpenapiClient::UserRelated](docs/UserRelated.md)
- - [OpenapiClient::UserRequestBody](docs/UserRequestBody.md)
- - [OpenapiClient::Users](docs/Users.md)
- - [OpenapiClient::WalletAccount](docs/WalletAccount.md)
- - [OpenapiClient::WalletAccountBpayDetails](docs/WalletAccountBpayDetails.md)
- - [OpenapiClient::WalletAccountBpayDetailsBpayDetails](docs/WalletAccountBpayDetailsBpayDetails.md)
- - [OpenapiClient::WalletAccountNppDetails](docs/WalletAccountNppDetails.md)
- - [OpenapiClient::WalletAccountNppDetailsNppDetails](docs/WalletAccountNppDetailsNppDetails.md)
- - [OpenapiClient::WalletAccountNppDetailsNppDetailsMarketplacePayIds](docs/WalletAccountNppDetailsNppDetailsMarketplacePayIds.md)
- - [OpenapiClient::WalletAccountWalletAccounts](docs/WalletAccountWalletAccounts.md)
- - [OpenapiClient::WalletAccountWalletAccountsLinks](docs/WalletAccountWalletAccountsLinks.md)
- - [OpenapiClient::WireDetails](docs/WireDetails.md)
- - [OpenapiClient::WireDetailsWithId](docs/WireDetailsWithId.md)
- - [OpenapiClient::WithdrawRequestBody](docs/WithdrawRequestBody.md)
+ - [AssemblyPayments::Account](docs/Account.md)
+ - [AssemblyPayments::AccountIdRequestBody](docs/AccountIdRequestBody.md)
+ - [AssemblyPayments::Address](docs/Address.md)
+ - [AssemblyPayments::AddressAddresses](docs/AddressAddresses.md)
+ - [AssemblyPayments::AddressAddressesLinks](docs/AddressAddressesLinks.md)
+ - [AssemblyPayments::BankAccount](docs/BankAccount.md)
+ - [AssemblyPayments::BankAccountBankAccounts](docs/BankAccountBankAccounts.md)
+ - [AssemblyPayments::BankAccountBankAccountsBank](docs/BankAccountBankAccountsBank.md)
+ - [AssemblyPayments::BankAccountBankAccountsLinks](docs/BankAccountBankAccountsLinks.md)
+ - [AssemblyPayments::BankAccountDeletion](docs/BankAccountDeletion.md)
+ - [AssemblyPayments::BankAccountIdRequestBody](docs/BankAccountIdRequestBody.md)
+ - [AssemblyPayments::BankAccountRequestBody](docs/BankAccountRequestBody.md)
+ - [AssemblyPayments::BatchTransaction](docs/BatchTransaction.md)
+ - [AssemblyPayments::BatchTransactionAccountExternal](docs/BatchTransactionAccountExternal.md)
+ - [AssemblyPayments::BatchTransactionAccountExternalCurrency](docs/BatchTransactionAccountExternalCurrency.md)
+ - [AssemblyPayments::BatchTransactionAddressCountry](docs/BatchTransactionAddressCountry.md)
+ - [AssemblyPayments::BatchTransactionItem](docs/BatchTransactionItem.md)
+ - [AssemblyPayments::BatchTransactionLinks](docs/BatchTransactionLinks.md)
+ - [AssemblyPayments::BatchTransactionMarketplace](docs/BatchTransactionMarketplace.md)
+ - [AssemblyPayments::BatchTransactionRelated](docs/BatchTransactionRelated.md)
+ - [AssemblyPayments::BatchTransactionRelatedAccountTo](docs/BatchTransactionRelatedAccountTo.md)
+ - [AssemblyPayments::BillPaymentRequestBody](docs/BillPaymentRequestBody.md)
+ - [AssemblyPayments::BpayAccount](docs/BpayAccount.md)
+ - [AssemblyPayments::BpayAccountDeletion](docs/BpayAccountDeletion.md)
+ - [AssemblyPayments::BpayAccountRequestBody](docs/BpayAccountRequestBody.md)
+ - [AssemblyPayments::BpayDetails](docs/BpayDetails.md)
+ - [AssemblyPayments::BpayDetailsWithId](docs/BpayDetailsWithId.md)
+ - [AssemblyPayments::Callback](docs/Callback.md)
+ - [AssemblyPayments::CallbackDeletion](docs/CallbackDeletion.md)
+ - [AssemblyPayments::CallbackLinks](docs/CallbackLinks.md)
+ - [AssemblyPayments::CallbackRequestBody](docs/CallbackRequestBody.md)
+ - [AssemblyPayments::CallbackResponse](docs/CallbackResponse.md)
+ - [AssemblyPayments::CallbackResponsePayload](docs/CallbackResponsePayload.md)
+ - [AssemblyPayments::CallbackResponseResponse](docs/CallbackResponseResponse.md)
+ - [AssemblyPayments::Callbacks](docs/Callbacks.md)
+ - [AssemblyPayments::CardAccount](docs/CardAccount.md)
+ - [AssemblyPayments::CardAccountCardAccounts](docs/CardAccountCardAccounts.md)
+ - [AssemblyPayments::CardAccountCardAccountsCard](docs/CardAccountCardAccountsCard.md)
+ - [AssemblyPayments::CardAccountCardAccountsLinks](docs/CardAccountCardAccountsLinks.md)
+ - [AssemblyPayments::CardAccountDeletion](docs/CardAccountDeletion.md)
+ - [AssemblyPayments::CardAccountIdRequestBody](docs/CardAccountIdRequestBody.md)
+ - [AssemblyPayments::CardAccountRequestBody](docs/CardAccountRequestBody.md)
+ - [AssemblyPayments::CardAccountVerifyRequestBody](docs/CardAccountVerifyRequestBody.md)
+ - [AssemblyPayments::Charge](docs/Charge.md)
+ - [AssemblyPayments::ChargeLinks](docs/ChargeLinks.md)
+ - [AssemblyPayments::ChargeRequestBody](docs/ChargeRequestBody.md)
+ - [AssemblyPayments::ChargeStatus](docs/ChargeStatus.md)
+ - [AssemblyPayments::Charges](docs/Charges.md)
+ - [AssemblyPayments::Company](docs/Company.md)
+ - [AssemblyPayments::CompanyRelated](docs/CompanyRelated.md)
+ - [AssemblyPayments::CompanyRequestBody](docs/CompanyRequestBody.md)
+ - [AssemblyPayments::CompanySelf](docs/CompanySelf.md)
+ - [AssemblyPayments::DepositRequestBody](docs/DepositRequestBody.md)
+ - [AssemblyPayments::DirectDebitAuthority](docs/DirectDebitAuthority.md)
+ - [AssemblyPayments::DirectDebitAuthorityLinks](docs/DirectDebitAuthorityLinks.md)
+ - [AssemblyPayments::DirectDebitAuthorityRelated](docs/DirectDebitAuthorityRelated.md)
+ - [AssemblyPayments::DirectDebitAuthorityRequestBody](docs/DirectDebitAuthorityRequestBody.md)
+ - [AssemblyPayments::Disbursement](docs/Disbursement.md)
+ - [AssemblyPayments::DisbursementLinks](docs/DisbursementLinks.md)
+ - [AssemblyPayments::Disbursements](docs/Disbursements.md)
+ - [AssemblyPayments::Error](docs/Error.md)
+ - [AssemblyPayments::Fee](docs/Fee.md)
+ - [AssemblyPayments::FeeRequestBody](docs/FeeRequestBody.md)
+ - [AssemblyPayments::Fees](docs/Fees.md)
+ - [AssemblyPayments::Item](docs/Item.md)
+ - [AssemblyPayments::ItemLinks](docs/ItemLinks.md)
+ - [AssemblyPayments::ItemRelated](docs/ItemRelated.md)
+ - [AssemblyPayments::ItemRequestBody](docs/ItemRequestBody.md)
+ - [AssemblyPayments::Items](docs/Items.md)
+ - [AssemblyPayments::ListBatchTransactions](docs/ListBatchTransactions.md)
+ - [AssemblyPayments::ListBpayAccounts](docs/ListBpayAccounts.md)
+ - [AssemblyPayments::ListBpayAccountsBpayAccounts](docs/ListBpayAccountsBpayAccounts.md)
+ - [AssemblyPayments::ListBpayAccountsBpayDetails](docs/ListBpayAccountsBpayDetails.md)
+ - [AssemblyPayments::ListBpayAccountsLinks](docs/ListBpayAccountsLinks.md)
+ - [AssemblyPayments::ListBpayAccountsMeta](docs/ListBpayAccountsMeta.md)
+ - [AssemblyPayments::ListCallbackResponses](docs/ListCallbackResponses.md)
+ - [AssemblyPayments::ListCallbackResponsesLinks](docs/ListCallbackResponsesLinks.md)
+ - [AssemblyPayments::ListDirectDebitAuthorities](docs/ListDirectDebitAuthorities.md)
+ - [AssemblyPayments::Marketplace](docs/Marketplace.md)
+ - [AssemblyPayments::MarketplaceMarketplaces](docs/MarketplaceMarketplaces.md)
+ - [AssemblyPayments::MarketplaceMarketplacesBusinessInformation](docs/MarketplaceMarketplacesBusinessInformation.md)
+ - [AssemblyPayments::MarketplaceMarketplacesLinks](docs/MarketplaceMarketplacesLinks.md)
+ - [AssemblyPayments::MarketplaceMarketplacesRelated](docs/MarketplaceMarketplacesRelated.md)
+ - [AssemblyPayments::PennyVerifyRequestBody](docs/PennyVerifyRequestBody.md)
+ - [AssemblyPayments::RefundRequestBody](docs/RefundRequestBody.md)
+ - [AssemblyPayments::ReleasePaymentRequestBody](docs/ReleasePaymentRequestBody.md)
+ - [AssemblyPayments::SimpleCompanies](docs/SimpleCompanies.md)
+ - [AssemblyPayments::SimpleCompany](docs/SimpleCompany.md)
+ - [AssemblyPayments::SingleBatchTransaction](docs/SingleBatchTransaction.md)
+ - [AssemblyPayments::SingleBpayDetailsWithId](docs/SingleBpayDetailsWithId.md)
+ - [AssemblyPayments::SingleCallback](docs/SingleCallback.md)
+ - [AssemblyPayments::SingleCallbackResponse](docs/SingleCallbackResponse.md)
+ - [AssemblyPayments::SingleCharge](docs/SingleCharge.md)
+ - [AssemblyPayments::SingleChargeStatus](docs/SingleChargeStatus.md)
+ - [AssemblyPayments::SingleCompany](docs/SingleCompany.md)
+ - [AssemblyPayments::SingleDirectDebitAuthority](docs/SingleDirectDebitAuthority.md)
+ - [AssemblyPayments::SingleDisbursement](docs/SingleDisbursement.md)
+ - [AssemblyPayments::SingleFee](docs/SingleFee.md)
+ - [AssemblyPayments::SingleItem](docs/SingleItem.md)
+ - [AssemblyPayments::SingleRoutingNumber](docs/SingleRoutingNumber.md)
+ - [AssemblyPayments::SingleRoutingNumberRoutingNumber](docs/SingleRoutingNumberRoutingNumber.md)
+ - [AssemblyPayments::SingleStatus](docs/SingleStatus.md)
+ - [AssemblyPayments::SingleTransaction](docs/SingleTransaction.md)
+ - [AssemblyPayments::SingleUser](docs/SingleUser.md)
+ - [AssemblyPayments::SingleWireDetailsWithId](docs/SingleWireDetailsWithId.md)
+ - [AssemblyPayments::Status](docs/Status.md)
+ - [AssemblyPayments::TokenAuthRequestBody](docs/TokenAuthRequestBody.md)
+ - [AssemblyPayments::TokensRequestBody](docs/TokensRequestBody.md)
+ - [AssemblyPayments::TokensResponse](docs/TokensResponse.md)
+ - [AssemblyPayments::ToolsStatus](docs/ToolsStatus.md)
+ - [AssemblyPayments::Transaction](docs/Transaction.md)
+ - [AssemblyPayments::TransactionLinks](docs/TransactionLinks.md)
+ - [AssemblyPayments::TransactionMarketplace](docs/TransactionMarketplace.md)
+ - [AssemblyPayments::TransactionPayeeDetails](docs/TransactionPayeeDetails.md)
+ - [AssemblyPayments::TransactionRelated](docs/TransactionRelated.md)
+ - [AssemblyPayments::TransactionRelatedTransactions](docs/TransactionRelatedTransactions.md)
+ - [AssemblyPayments::Transactions](docs/Transactions.md)
+ - [AssemblyPayments::UpdateItemRequestBody](docs/UpdateItemRequestBody.md)
+ - [AssemblyPayments::UpdateUserRequestBody](docs/UpdateUserRequestBody.md)
+ - [AssemblyPayments::User](docs/User.md)
+ - [AssemblyPayments::UserLinks](docs/UserLinks.md)
+ - [AssemblyPayments::UserRelated](docs/UserRelated.md)
+ - [AssemblyPayments::UserRequestBody](docs/UserRequestBody.md)
+ - [AssemblyPayments::Users](docs/Users.md)
+ - [AssemblyPayments::WalletAccount](docs/WalletAccount.md)
+ - [AssemblyPayments::WalletAccountBpayDetails](docs/WalletAccountBpayDetails.md)
+ - [AssemblyPayments::WalletAccountBpayDetailsBpayDetails](docs/WalletAccountBpayDetailsBpayDetails.md)
+ - [AssemblyPayments::WalletAccountNppDetails](docs/WalletAccountNppDetails.md)
+ - [AssemblyPayments::WalletAccountNppDetailsNppDetails](docs/WalletAccountNppDetailsNppDetails.md)
+ - [AssemblyPayments::WalletAccountNppDetailsNppDetailsMarketplacePayIds](docs/WalletAccountNppDetailsNppDetailsMarketplacePayIds.md)
+ - [AssemblyPayments::WalletAccountWalletAccounts](docs/WalletAccountWalletAccounts.md)
+ - [AssemblyPayments::WalletAccountWalletAccountsLinks](docs/WalletAccountWalletAccountsLinks.md)
+ - [AssemblyPayments::WireDetails](docs/WireDetails.md)
+ - [AssemblyPayments::WireDetailsWithId](docs/WireDetailsWithId.md)
+ - [AssemblyPayments::WithdrawRequestBody](docs/WithdrawRequestBody.md)
 
 
 ## Documentation for Authorization

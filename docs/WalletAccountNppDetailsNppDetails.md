@@ -1,4 +1,4 @@
-# OpenapiClient::WalletAccountNppDetailsNppDetails
+# AssemblyPayments::WalletAccountNppDetailsNppDetails
 
 ## Properties
 
@@ -13,9 +13,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::WalletAccountNppDetailsNppDetails.new(
+instance = AssemblyPayments::WalletAccountNppDetailsNppDetails.new(
   pay_id: null,
   marketplace_pay_ids: null,
   reference: null,

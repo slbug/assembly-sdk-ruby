@@ -1,4 +1,4 @@
-# OpenapiClient::ItemActionsApi
+# AssemblyPayments::ItemActionsApi
 
 All URIs are relative to *https://test.api.promisepay.com*
 
@@ -25,9 +25,9 @@ Where pre-authentication is enabled on a platform, initiates a credit card payme
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -36,15 +36,15 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::ItemActionsApi.new
+api_instance = AssemblyPayments::ItemActionsApi.new
 id = '7190770-1-2908' # String | Marketplace / Platform item ID
-card_account_id_request_body = OpenapiClient::CardAccountIdRequestBody.new({account_id: '725cc8c0-759b-0138-5d6d-0a58a9feac05'}) # CardAccountIdRequestBody | 
+card_account_id_request_body = AssemblyPayments::CardAccountIdRequestBody.new({account_id: '725cc8c0-759b-0138-5d6d-0a58a9feac05'}) # CardAccountIdRequestBody | 
 
 begin
   # Authorize Payment
   result = api_instance.authorize_payment(id, card_account_id_request_body)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ItemActionsApi->authorize_payment: #{e}"
 end
 ```
@@ -62,7 +62,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleItem>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ItemActionsApi->authorize_payment_with_http_info: #{e}"
 end
 ```
@@ -100,9 +100,9 @@ Cancel an **Item**. This will transition the **Item** state to `cancelled`. **It
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -111,14 +111,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::ItemActionsApi.new
+api_instance = AssemblyPayments::ItemActionsApi.new
 id = '7190770-1-2908' # String | Marketplace / Platform item ID
 
 begin
   # Cancel
   result = api_instance.cancel_item(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ItemActionsApi->cancel_item: #{e}"
 end
 ```
@@ -136,7 +136,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleItem>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ItemActionsApi->cancel_item_with_http_info: #{e}"
 end
 ```
@@ -173,9 +173,9 @@ Where pre-authentication is enabled on a platform, completes a credit card payme
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -184,14 +184,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::ItemActionsApi.new
+api_instance = AssemblyPayments::ItemActionsApi.new
 id = '7190770-1-2908' # String | Marketplace / Platform item ID
 
 begin
   # Capture Payment
   result = api_instance.capture_payment(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ItemActionsApi->capture_payment: #{e}"
 end
 ```
@@ -209,7 +209,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleItem>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ItemActionsApi->capture_payment_with_http_info: #{e}"
 end
 ```
@@ -246,9 +246,9 @@ Make a payment for an **Item**. Pass the `:account_id` of a **Bank Account** or 
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -257,15 +257,15 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::ItemActionsApi.new
+api_instance = AssemblyPayments::ItemActionsApi.new
 id = '7190770-1-2908' # String | Marketplace / Platform item ID
-account_id_request_body = OpenapiClient::AccountIdRequestBody.new({account_id: '725cc8c0-759b-0138-5d6d-0a58a9feac05'}) # AccountIdRequestBody | 
+account_id_request_body = AssemblyPayments::AccountIdRequestBody.new({account_id: '725cc8c0-759b-0138-5d6d-0a58a9feac05'}) # AccountIdRequestBody | 
 
 begin
   # Make Payment
   result = api_instance.make_payment(id, account_id_request_body)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ItemActionsApi->make_payment: #{e}"
 end
 ```
@@ -283,7 +283,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleItem>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ItemActionsApi->make_payment_with_http_info: #{e}"
 end
 ```
@@ -321,9 +321,9 @@ Refund an **Item**’s funds. A partial `amount` can be specified otherwise the 
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -332,15 +332,15 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::ItemActionsApi.new
+api_instance = AssemblyPayments::ItemActionsApi.new
 id = '7190770-1-2908' # String | Marketplace / Platform item ID to be refunded
-refund_request_body = OpenapiClient::RefundRequestBody.new # RefundRequestBody | 
+refund_request_body = AssemblyPayments::RefundRequestBody.new # RefundRequestBody | 
 
 begin
   # Refund
   result = api_instance.refund(id, refund_request_body)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ItemActionsApi->refund: #{e}"
 end
 ```
@@ -358,7 +358,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleItem>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ItemActionsApi->refund_with_http_info: #{e}"
 end
 ```
@@ -396,9 +396,9 @@ Included for legacy purposes for existing customers that use Escrow payments whi
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -407,15 +407,15 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::ItemActionsApi.new
+api_instance = AssemblyPayments::ItemActionsApi.new
 id = '7190770-1-2908' # String | Marketplace / Platform item ID
-release_payment_request_body = OpenapiClient::ReleasePaymentRequestBody.new # ReleasePaymentRequestBody | 
+release_payment_request_body = AssemblyPayments::ReleasePaymentRequestBody.new # ReleasePaymentRequestBody | 
 
 begin
   # Release Payment (Deprecated - Do Not Use)
   result = api_instance.release_payment(id, release_payment_request_body)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ItemActionsApi->release_payment: #{e}"
 end
 ```
@@ -433,7 +433,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleItem>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ItemActionsApi->release_payment_with_http_info: #{e}"
 end
 ```
@@ -471,9 +471,9 @@ Where pre-authentication is enabled on a platform, voids the `payment_authorized
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -482,14 +482,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::ItemActionsApi.new
+api_instance = AssemblyPayments::ItemActionsApi.new
 id = '7190770-1-2908' # String | Marketplace / Platform item ID
 
 begin
   # Void Payment
   result = api_instance.void_payment(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ItemActionsApi->void_payment: #{e}"
 end
 ```
@@ -507,7 +507,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleItem>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ItemActionsApi->void_payment_with_http_info: #{e}"
 end
 ```

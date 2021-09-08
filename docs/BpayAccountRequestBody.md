@@ -1,4 +1,4 @@
-# OpenapiClient::BpayAccountRequestBody
+# AssemblyPayments::BpayAccountRequestBody
 
 ## Properties
 
@@ -12,9 +12,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::BpayAccountRequestBody.new(
+instance = AssemblyPayments::BpayAccountRequestBody.new(
   user_id: 725cc8c0-759b-0138-5d6d-0a58a9feac05,
   account_name: My Water Bill Company,
   biller_code: 123456,

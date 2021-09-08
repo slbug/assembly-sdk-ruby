@@ -1,4 +1,4 @@
-# OpenapiClient::TransactionPayeeDetails
+# AssemblyPayments::TransactionPayeeDetails
 
 ## Properties
 
@@ -18,9 +18,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::TransactionPayeeDetails.new(
+instance = AssemblyPayments::TransactionPayeeDetails.new(
   debtor_name: Test debtor name,
   debtor_legal_name: Test debtor legal name,
   debtor_bsb: 123456,

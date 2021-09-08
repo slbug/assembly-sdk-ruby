@@ -1,4 +1,4 @@
-# OpenapiClient::ChargeStatus
+# AssemblyPayments::ChargeStatus
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::ChargeStatus.new(
+instance = AssemblyPayments::ChargeStatus.new(
   id: cb7eafc1-571c-425c-9adc-f56cb585cd68,
   state: completed,
   status: 22500

@@ -1,4 +1,4 @@
-# OpenapiClient::WalletAccountsApi
+# AssemblyPayments::WalletAccountsApi
 
 All URIs are relative to *https://test.api.promisepay.com*
 
@@ -24,9 +24,9 @@ Pay a bill by withdrawing funds from a **Wallet Account** to a specified bpay ac
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -35,15 +35,15 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::WalletAccountsApi.new
+api_instance = AssemblyPayments::WalletAccountsApi.new
 id = '8a31ebfa-421b-4cbb-9241-632f71b3778a' # String | Account ID
-bill_payment_request_body = OpenapiClient::BillPaymentRequestBody.new({account_id: 'c1824ad0-73f1-0138-3700-0a58a9feac09', amount: 173}) # BillPaymentRequestBody | 
+bill_payment_request_body = AssemblyPayments::BillPaymentRequestBody.new({account_id: 'c1824ad0-73f1-0138-3700-0a58a9feac09', amount: 173}) # BillPaymentRequestBody | 
 
 begin
   # Pay a Bill
   result = api_instance.bill_payment(id, bill_payment_request_body)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling WalletAccountsApi->bill_payment: #{e}"
 end
 ```
@@ -61,7 +61,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleDisbursement>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling WalletAccountsApi->bill_payment_with_http_info: #{e}"
 end
 ```
@@ -99,9 +99,9 @@ Show details of a specific **Wallet Account** using a given `:id.`
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -110,14 +110,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::WalletAccountsApi.new
+api_instance = AssemblyPayments::WalletAccountsApi.new
 id = '5c1c6b10-4c56-0137-8cd7-0242ac110002' # String | Account ID
 
 begin
   # Show Wallet Account
   result = api_instance.show_wallet_account(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling WalletAccountsApi->show_wallet_account: #{e}"
 end
 ```
@@ -135,7 +135,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <WalletAccount>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling WalletAccountsApi->show_wallet_account_with_http_info: #{e}"
 end
 ```
@@ -172,9 +172,9 @@ Show BPAY details of a specific **Wallet Account** using a given `:id.`
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -183,14 +183,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::WalletAccountsApi.new
+api_instance = AssemblyPayments::WalletAccountsApi.new
 id = '5c1c6b10-4c56-0137-8cd7-0242ac110002' # String | Account ID
 
 begin
   # Show Wallet Account BPAY Details
   result = api_instance.show_wallet_account_nbpay_details(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling WalletAccountsApi->show_wallet_account_nbpay_details: #{e}"
 end
 ```
@@ -208,7 +208,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <WalletAccountBpayDetails>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling WalletAccountsApi->show_wallet_account_nbpay_details_with_http_info: #{e}"
 end
 ```
@@ -245,9 +245,9 @@ Show NPP details of a specific **Wallet Account** using a given `:id.`
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -256,14 +256,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::WalletAccountsApi.new
+api_instance = AssemblyPayments::WalletAccountsApi.new
 id = '5c1c6b10-4c56-0137-8cd7-0242ac110002' # String | Account ID
 
 begin
   # Show Wallet Account NPP Details
   result = api_instance.show_wallet_account_npp_details(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling WalletAccountsApi->show_wallet_account_npp_details: #{e}"
 end
 ```
@@ -281,7 +281,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <WalletAccountNppDetails>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling WalletAccountsApi->show_wallet_account_npp_details_with_http_info: #{e}"
 end
 ```
@@ -318,9 +318,9 @@ Show the **User** the **Wallet Account** is associated with using a given `:id`.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -329,14 +329,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::WalletAccountsApi.new
+api_instance = AssemblyPayments::WalletAccountsApi.new
 id = '901d8cd0-6af3-0138-967d-0a58a9feac04' # String | Account ID
 
 begin
   # Show Wallet Account User
   result = api_instance.show_wallet_account_user(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling WalletAccountsApi->show_wallet_account_user: #{e}"
 end
 ```
@@ -354,7 +354,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleUser>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling WalletAccountsApi->show_wallet_account_user_with_http_info: #{e}"
 end
 ```
@@ -391,9 +391,9 @@ Withdraw funds from a **Wallet Account** to a specified disbursement account.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -402,15 +402,15 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::WalletAccountsApi.new
+api_instance = AssemblyPayments::WalletAccountsApi.new
 id = 'bd6e9c20-73f1-0138-fb91-0a58a9feac09' # String | Wallet account ID
-withdraw_request_body = OpenapiClient::WithdrawRequestBody.new({account_id: 'c1824ad0-73f1-0138-3700-0a58a9feac09', amount: 173}) # WithdrawRequestBody | 
+withdraw_request_body = AssemblyPayments::WithdrawRequestBody.new({account_id: 'c1824ad0-73f1-0138-3700-0a58a9feac09', amount: 173}) # WithdrawRequestBody | 
 
 begin
   # Withdraw Funds
   result = api_instance.withdraw_funds(id, withdraw_request_body)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling WalletAccountsApi->withdraw_funds: #{e}"
 end
 ```
@@ -428,7 +428,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleDisbursement>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling WalletAccountsApi->withdraw_funds_with_http_info: #{e}"
 end
 ```

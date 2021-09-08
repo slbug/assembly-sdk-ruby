@@ -1,4 +1,4 @@
-# OpenapiClient::CardAccountsApi
+# AssemblyPayments::CardAccountsApi
 
 All URIs are relative to *https://test.api.promisepay.com*
 
@@ -23,9 +23,9 @@ Create a Credit **Card Account** to be used as a funding source. Store the retur
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -34,14 +34,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::CardAccountsApi.new
-card_account_request_body = OpenapiClient::CardAccountRequestBody.new({full_name: 'John Doe', number: '4444111122223333', expiry_month: 1, expiry_year: 2025, cvv: '123', user_id: '83f54680-9600-4bee-a6d1-84a5d0e10059'}) # CardAccountRequestBody | 
+api_instance = AssemblyPayments::CardAccountsApi.new
+card_account_request_body = AssemblyPayments::CardAccountRequestBody.new({full_name: 'John Doe', number: '4444111122223333', expiry_month: 1, expiry_year: 2025, cvv: '123', user_id: '83f54680-9600-4bee-a6d1-84a5d0e10059'}) # CardAccountRequestBody | 
 
 begin
   # Create Card Account
   result = api_instance.create_card_account(card_account_request_body)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling CardAccountsApi->create_card_account: #{e}"
 end
 ```
@@ -59,7 +59,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CardAccount>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling CardAccountsApi->create_card_account_with_http_info: #{e}"
 end
 ```
@@ -96,9 +96,9 @@ Redact a Credit **Card Account** using a given `:id`. Redacted Credit **Card Acc
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -107,14 +107,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::CardAccountsApi.new
+api_instance = AssemblyPayments::CardAccountsApi.new
 id = 'aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee' # String | ID of the card account to be deleted
 
 begin
   # Redact Card Account
   result = api_instance.redact_card_account(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling CardAccountsApi->redact_card_account: #{e}"
 end
 ```
@@ -132,7 +132,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CardAccountDeletion>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling CardAccountsApi->redact_card_account_with_http_info: #{e}"
 end
 ```
@@ -169,9 +169,9 @@ Show details of a specific Credit **Card Account** using a given `:id`. You can 
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -180,14 +180,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::CardAccountsApi.new
+api_instance = AssemblyPayments::CardAccountsApi.new
 id = 'aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee' # String | Card account ID
 
 begin
   # Show Card Account
   result = api_instance.show_card_account(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling CardAccountsApi->show_card_account: #{e}"
 end
 ```
@@ -205,7 +205,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CardAccount>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling CardAccountsApi->show_card_account_with_http_info: #{e}"
 end
 ```
@@ -242,9 +242,9 @@ Show the **User** the Credit **Card Account** is associated with using a given `
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -253,14 +253,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::CardAccountsApi.new
+api_instance = AssemblyPayments::CardAccountsApi.new
 id = '901d8cd0-6af3-0138-967d-0a58a9feac04' # String | Card account ID
 
 begin
   # Show Card Account User
   result = api_instance.show_card_account_user(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling CardAccountsApi->show_card_account_user: #{e}"
 end
 ```
@@ -278,7 +278,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleUser>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling CardAccountsApi->show_card_account_user_with_http_info: #{e}"
 end
 ```
@@ -315,9 +315,9 @@ Where pre-authorization is enabled on a platform, verifies a **Card Account** wh
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -326,17 +326,17 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::CardAccountsApi.new
+api_instance = AssemblyPayments::CardAccountsApi.new
 id = 'aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee' # String | Card account ID
 opts = {
-  card_account_verify_request_body: OpenapiClient::CardAccountVerifyRequestBody.new # CardAccountVerifyRequestBody | 
+  card_account_verify_request_body: AssemblyPayments::CardAccountVerifyRequestBody.new # CardAccountVerifyRequestBody | 
 }
 
 begin
   # Verify Card
   result = api_instance.verify_card(id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling CardAccountsApi->verify_card: #{e}"
 end
 ```
@@ -354,7 +354,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CardAccount>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling CardAccountsApi->verify_card_with_http_info: #{e}"
 end
 ```

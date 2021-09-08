@@ -1,4 +1,4 @@
-# OpenapiClient::SingleRoutingNumber
+# AssemblyPayments::SingleRoutingNumber
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::SingleRoutingNumber.new(
+instance = AssemblyPayments::SingleRoutingNumber.new(
   routing_number: null
 )
 ```

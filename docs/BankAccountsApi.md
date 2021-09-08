@@ -1,4 +1,4 @@
-# OpenapiClient::BankAccountsApi
+# AssemblyPayments::BankAccountsApi
 
 All URIs are relative to *https://test.api.promisepay.com*
 
@@ -25,9 +25,9 @@ Create a **Bank Account** to be used as either a funding source or a Disbursemen
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -36,14 +36,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::BankAccountsApi.new
-bank_account_request_body = OpenapiClient::BankAccountRequestBody.new({user_id: 'aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee', bank_name: 'Bank of Australia', account_name: 'Samuel Seller', routing_number: '111123', account_number: '111234', account_type: 'savings', holder_type: 'personal', country: 'AUS'}) # BankAccountRequestBody | 
+api_instance = AssemblyPayments::BankAccountsApi.new
+bank_account_request_body = AssemblyPayments::BankAccountRequestBody.new({user_id: 'aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee', bank_name: 'Bank of Australia', account_name: 'Samuel Seller', routing_number: '111123', account_number: '111234', account_type: 'savings', holder_type: 'personal', country: 'AUS'}) # BankAccountRequestBody | 
 
 begin
   # Create Bank Account
   result = api_instance.create_bank_account(bank_account_request_body)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling BankAccountsApi->create_bank_account: #{e}"
 end
 ```
@@ -61,7 +61,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <BankAccount>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling BankAccountsApi->create_bank_account_with_http_info: #{e}"
 end
 ```
@@ -98,9 +98,9 @@ Redact a **Bank Account** using a given `:id`. Redacted **Bank Accounts** can no
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -109,14 +109,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::BankAccountsApi.new
+api_instance = AssemblyPayments::BankAccountsApi.new
 id = 'aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee' # String | Bank account ID
 
 begin
   # Redact Bank Account
   result = api_instance.redact_bank_account(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling BankAccountsApi->redact_bank_account: #{e}"
 end
 ```
@@ -134,7 +134,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <BankAccountDeletion>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling BankAccountsApi->redact_bank_account_with_http_info: #{e}"
 end
 ```
@@ -171,9 +171,9 @@ When penny verification is enabled, this API call sends two penny transactions t
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -182,14 +182,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::BankAccountsApi.new
+api_instance = AssemblyPayments::BankAccountsApi.new
 id = 'aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee' # String | Bank account ID
 
 begin
   # Send Penny Amount
   result = api_instance.send_penny_amount(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling BankAccountsApi->send_penny_amount: #{e}"
 end
 ```
@@ -207,7 +207,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <BankAccount>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling BankAccountsApi->send_penny_amount_with_http_info: #{e}"
 end
 ```
@@ -244,9 +244,9 @@ Show details of a specific **Bank Account** using a given `:id`.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -255,14 +255,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::BankAccountsApi.new
+api_instance = AssemblyPayments::BankAccountsApi.new
 id = 'aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee' # String | Bank account ID
 
 begin
   # Show Bank Account
   result = api_instance.show_bank_account(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling BankAccountsApi->show_bank_account: #{e}"
 end
 ```
@@ -280,7 +280,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <BankAccount>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling BankAccountsApi->show_bank_account_with_http_info: #{e}"
 end
 ```
@@ -317,9 +317,9 @@ Show the **User** the **Bank Account** is associated with using a given `:id`.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -328,14 +328,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::BankAccountsApi.new
+api_instance = AssemblyPayments::BankAccountsApi.new
 id = '901d8cd0-6af3-0138-967d-0a58a9feac04' # String | Bank account ID
 
 begin
   # Show Bank Account User
   result = api_instance.show_bank_account_user(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling BankAccountsApi->show_bank_account_user: #{e}"
 end
 ```
@@ -353,7 +353,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleUser>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling BankAccountsApi->show_bank_account_user_with_http_info: #{e}"
 end
 ```
@@ -390,9 +390,9 @@ Validate a US bank routing number before creating an account. This can be used t
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -401,14 +401,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::BankAccountsApi.new
+api_instance = AssemblyPayments::BankAccountsApi.new
 routing_number = '122235821' # String | Bank account routing number
 
 begin
   # Validate Routing Number
   result = api_instance.validate_routing_number(routing_number)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling BankAccountsApi->validate_routing_number: #{e}"
 end
 ```
@@ -426,7 +426,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleRoutingNumber>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling BankAccountsApi->validate_routing_number_with_http_info: #{e}"
 end
 ```
@@ -463,9 +463,9 @@ When penny verification is enabled, this API call verifies the two penny transac
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -474,15 +474,15 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::BankAccountsApi.new
+api_instance = AssemblyPayments::BankAccountsApi.new
 id = 'aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee' # String | Bank account ID
-penny_verify_request_body = OpenapiClient::PennyVerifyRequestBody.new({amount_1: 37, amount_2: 37}) # PennyVerifyRequestBody | 
+penny_verify_request_body = AssemblyPayments::PennyVerifyRequestBody.new({amount_1: 37, amount_2: 37}) # PennyVerifyRequestBody | 
 
 begin
   # Verify Penny Amount
   result = api_instance.verify_penny_amount(id, penny_verify_request_body)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling BankAccountsApi->verify_penny_amount: #{e}"
 end
 ```
@@ -500,7 +500,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <BankAccount>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling BankAccountsApi->verify_penny_amount_with_http_info: #{e}"
 end
 ```

@@ -1,4 +1,4 @@
-# OpenapiClient::TokensRequestBody
+# AssemblyPayments::TokensRequestBody
 
 ## Properties
 
@@ -12,9 +12,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::TokensRequestBody.new(
+instance = AssemblyPayments::TokensRequestBody.new(
   grant_type: client_credentials,
   client_id: 10ajtntet1ccghuo8mv9ojglma,
   client_secret: hto00nsjk6osurndceon4rsn2irhi8s4lurau5f797d0smb94l6,

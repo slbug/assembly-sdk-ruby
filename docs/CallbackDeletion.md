@@ -1,4 +1,4 @@
-# OpenapiClient::CallbackDeletion
+# AssemblyPayments::CallbackDeletion
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::CallbackDeletion.new(
+instance = AssemblyPayments::CallbackDeletion.new(
   callbacks: Successfully redacted
 )
 ```

@@ -1,4 +1,4 @@
-# OpenapiClient::FeeRequestBody
+# AssemblyPayments::FeeRequestBody
 
 ## Properties
 
@@ -15,9 +15,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::FeeRequestBody.new(
+instance = AssemblyPayments::FeeRequestBody.new(
   name: Seller Success Fee,
   fee_type_id: 2,
   amount: 200,

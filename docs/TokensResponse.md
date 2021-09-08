@@ -1,4 +1,4 @@
-# OpenapiClient::TokensResponse
+# AssemblyPayments::TokensResponse
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::TokensResponse.new(
+instance = AssemblyPayments::TokensResponse.new(
   access_token: ey...J9.ey...n0.Iu...7g,
   expires_in: 3600,
   token_type: Bearer

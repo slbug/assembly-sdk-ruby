@@ -1,4 +1,4 @@
-# OpenapiClient::ReleasePaymentRequestBody
+# AssemblyPayments::ReleasePaymentRequestBody
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::ReleasePaymentRequestBody.new(
+instance = AssemblyPayments::ReleasePaymentRequestBody.new(
   release_amount: null,
   flag_release: false
 )

@@ -1,4 +1,4 @@
-# OpenapiClient::MarketplacesApi
+# AssemblyPayments::MarketplacesApi
 
 All URIs are relative to *https://test.api.promisepay.com*
 
@@ -19,9 +19,9 @@ Show details of your **Platform**, providing access to your configuration and re
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -30,13 +30,13 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::MarketplacesApi.new
+api_instance = AssemblyPayments::MarketplacesApi.new
 
 begin
   # Show Marketplace
   result = api_instance.show_marketplace
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling MarketplacesApi->show_marketplace: #{e}"
 end
 ```
@@ -54,7 +54,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Marketplace>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling MarketplacesApi->show_marketplace_with_http_info: #{e}"
 end
 ```

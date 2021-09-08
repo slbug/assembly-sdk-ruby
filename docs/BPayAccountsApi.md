@@ -1,4 +1,4 @@
-# OpenapiClient::BPayAccountsApi
+# AssemblyPayments::BPayAccountsApi
 
 All URIs are relative to *https://test.api.promisepay.com*
 
@@ -22,9 +22,9 @@ Create a **BPay Account** to be used as a Disbursement destination.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -33,14 +33,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::BPayAccountsApi.new
-bpay_account_request_body = OpenapiClient::BpayAccountRequestBody.new({user_id: '725cc8c0-759b-0138-5d6d-0a58a9feac05', account_name: 'My Water Bill Company', biller_code: 123456, bpay_crn: '987654321'}) # BpayAccountRequestBody | 
+api_instance = AssemblyPayments::BPayAccountsApi.new
+bpay_account_request_body = AssemblyPayments::BpayAccountRequestBody.new({user_id: '725cc8c0-759b-0138-5d6d-0a58a9feac05', account_name: 'My Water Bill Company', biller_code: 123456, bpay_crn: '987654321'}) # BpayAccountRequestBody | 
 
 begin
   # Create BPay Account
   result = api_instance.create_b_pay_account(bpay_account_request_body)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling BPayAccountsApi->create_b_pay_account: #{e}"
 end
 ```
@@ -58,7 +58,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <BpayAccount>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling BPayAccountsApi->create_b_pay_account_with_http_info: #{e}"
 end
 ```
@@ -95,9 +95,9 @@ Redact a **BPay Account** using a given `:id`. Redacted **BPay Accounts** can no
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -106,14 +106,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::BPayAccountsApi.new
+api_instance = AssemblyPayments::BPayAccountsApi.new
 id = 'aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee' # String | BPay account ID
 
 begin
   # Redact BPay Account (Future Feature)
   result = api_instance.redact_b_pay_account(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling BPayAccountsApi->redact_b_pay_account: #{e}"
 end
 ```
@@ -131,7 +131,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <BpayAccountDeletion>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling BPayAccountsApi->redact_b_pay_account_with_http_info: #{e}"
 end
 ```
@@ -168,9 +168,9 @@ Show details of a specific **BPay Account** using a given `:id`.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -179,14 +179,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::BPayAccountsApi.new
+api_instance = AssemblyPayments::BPayAccountsApi.new
 id = 'aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee' # String | BPay account ID
 
 begin
   # Show BPay Account
   result = api_instance.show_b_pay_account(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling BPayAccountsApi->show_b_pay_account: #{e}"
 end
 ```
@@ -204,7 +204,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <BpayAccount>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling BPayAccountsApi->show_b_pay_account_with_http_info: #{e}"
 end
 ```
@@ -241,9 +241,9 @@ Show the **User** the **BPay Account** is associated with using a given `:id`.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -252,14 +252,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::BPayAccountsApi.new
+api_instance = AssemblyPayments::BPayAccountsApi.new
 id = '901d8cd0-6af3-0138-967d-0a58a9feac04' # String | BPay account ID
 
 begin
   # Show BPay Account User
   result = api_instance.show_b_pay_account_user(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling BPayAccountsApi->show_b_pay_account_user: #{e}"
 end
 ```
@@ -277,7 +277,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleUser>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling BPayAccountsApi->show_b_pay_account_user_with_http_info: #{e}"
 end
 ```

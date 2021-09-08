@@ -1,4 +1,4 @@
-# OpenapiClient::WithdrawRequestBody
+# AssemblyPayments::WithdrawRequestBody
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::WithdrawRequestBody.new(
+instance = AssemblyPayments::WithdrawRequestBody.new(
   account_id: c1824ad0-73f1-0138-3700-0a58a9feac09,
   amount: 173,
   custom_descriptor: 

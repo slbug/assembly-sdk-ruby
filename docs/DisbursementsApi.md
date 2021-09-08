@@ -1,4 +1,4 @@
-# OpenapiClient::DisbursementsApi
+# AssemblyPayments::DisbursementsApi
 
 All URIs are relative to *https://test.api.promisepay.com*
 
@@ -25,9 +25,9 @@ Retrieve an ordered and paginated list of existing **Disbursements**. The list c
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -36,7 +36,7 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::DisbursementsApi.new
+api_instance = AssemblyPayments::DisbursementsApi.new
 opts = {
   limit: 56, # Integer | Number of records to retrieve. Up to 200.
   offset: 56, # Integer | Number of records to offset. Required for pagination.
@@ -47,7 +47,7 @@ begin
   # List Disbursements
   result = api_instance.list_disbursement(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling DisbursementsApi->list_disbursement: #{e}"
 end
 ```
@@ -65,7 +65,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Disbursements>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling DisbursementsApi->list_disbursement_with_http_info: #{e}"
 end
 ```
@@ -104,9 +104,9 @@ Get a disbursment using its ID
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -115,14 +115,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::DisbursementsApi.new
+api_instance = AssemblyPayments::DisbursementsApi.new
 id = '90c1418b-f4f4-413e-a4ba-f29c334e7f55' # String | Disbursement ID
 
 begin
   # Show Disbursement
   result = api_instance.show_disbursement(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling DisbursementsApi->show_disbursement: #{e}"
 end
 ```
@@ -140,7 +140,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleDisbursement>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling DisbursementsApi->show_disbursement_with_http_info: #{e}"
 end
 ```
@@ -177,9 +177,9 @@ Get all the bank accounts relating to disbursement ID
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -188,14 +188,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::DisbursementsApi.new
+api_instance = AssemblyPayments::DisbursementsApi.new
 id = '90c1418b-f4f4-413e-a4ba-f29c334e7f55' # String | Disbursement ID
 
 begin
   # Show Disbursement Bank Accounts
   result = api_instance.show_disbursement_bank_accounts(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling DisbursementsApi->show_disbursement_bank_accounts: #{e}"
 end
 ```
@@ -213,7 +213,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <BankAccount>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling DisbursementsApi->show_disbursement_bank_accounts_with_http_info: #{e}"
 end
 ```
@@ -250,9 +250,9 @@ Get all the items relating to a disbursement ID
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -261,14 +261,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::DisbursementsApi.new
+api_instance = AssemblyPayments::DisbursementsApi.new
 id = '90c1418b-f4f4-413e-a4ba-f29c334e7f55' # String | Disbursement ID
 
 begin
   # Show Disbursement Items
   result = api_instance.show_disbursement_items(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling DisbursementsApi->show_disbursement_items: #{e}"
 end
 ```
@@ -286,7 +286,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Items>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling DisbursementsApi->show_disbursement_items_with_http_info: #{e}"
 end
 ```
@@ -323,9 +323,9 @@ Get all the transactions relating to a disbursment ID
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -334,7 +334,7 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::DisbursementsApi.new
+api_instance = AssemblyPayments::DisbursementsApi.new
 id = '90c1418b-f4f4-413e-a4ba-f29c334e7f55' # String | Disbursement ID
 opts = {
   limit: 56, # Integer | Number of records to retrieve. Up to 200.
@@ -345,7 +345,7 @@ begin
   # Show Disbursement Transactions
   result = api_instance.show_disbursement_transactions(id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling DisbursementsApi->show_disbursement_transactions: #{e}"
 end
 ```
@@ -363,7 +363,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Transactions>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling DisbursementsApi->show_disbursement_transactions_with_http_info: #{e}"
 end
 ```
@@ -402,9 +402,9 @@ Get all the users relating to disbursement ID
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -413,14 +413,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::DisbursementsApi.new
+api_instance = AssemblyPayments::DisbursementsApi.new
 id = '90c1418b-f4f4-413e-a4ba-f29c334e7f55' # String | Disbursement ID
 
 begin
   # Show Disbursement Users
   result = api_instance.show_disbursement_users(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling DisbursementsApi->show_disbursement_users: #{e}"
 end
 ```
@@ -438,7 +438,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleUser>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling DisbursementsApi->show_disbursement_users_with_http_info: #{e}"
 end
 ```
@@ -475,9 +475,9 @@ Get all the wallet accounts relating to a disbursment ID
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -486,14 +486,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::DisbursementsApi.new
+api_instance = AssemblyPayments::DisbursementsApi.new
 id = '90c1418b-f4f4-413e-a4ba-f29c334e7f55' # String | Disbursement ID
 
 begin
   # Show Disbursement Wallet Accounts
   result = api_instance.show_disbursement_wallet_accounts(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling DisbursementsApi->show_disbursement_wallet_accounts: #{e}"
 end
 ```
@@ -511,7 +511,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <WalletAccount>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling DisbursementsApi->show_disbursement_wallet_accounts_with_http_info: #{e}"
 end
 ```

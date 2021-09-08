@@ -1,4 +1,4 @@
-# OpenapiClient::SimpleCompanies
+# AssemblyPayments::SimpleCompanies
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::SimpleCompanies.new(
+instance = AssemblyPayments::SimpleCompanies.new(
   companies: null
 )
 ```

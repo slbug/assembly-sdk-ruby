@@ -1,4 +1,4 @@
-# OpenapiClient::ItemLinks
+# AssemblyPayments::ItemLinks
 
 ## Properties
 
@@ -18,9 +18,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::ItemLinks.new(
+instance = AssemblyPayments::ItemLinks.new(
   _self: null,
   buyers: null,
   sellers: null,

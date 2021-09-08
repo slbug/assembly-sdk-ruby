@@ -1,4 +1,4 @@
-# OpenapiClient::BillPaymentRequestBody
+# AssemblyPayments::BillPaymentRequestBody
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::BillPaymentRequestBody.new(
+instance = AssemblyPayments::BillPaymentRequestBody.new(
   account_id: c1824ad0-73f1-0138-3700-0a58a9feac09,
   amount: 173
 )

@@ -1,4 +1,4 @@
-# OpenapiClient::BankAccountRequestBody
+# AssemblyPayments::BankAccountRequestBody
 
 ## Properties
 
@@ -18,9 +18,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::BankAccountRequestBody.new(
+instance = AssemblyPayments::BankAccountRequestBody.new(
   user_id: aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee,
   bank_name: Bank of Australia,
   account_name: Samuel Seller,

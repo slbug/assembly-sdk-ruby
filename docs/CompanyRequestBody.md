@@ -1,4 +1,4 @@
-# OpenapiClient::CompanyRequestBody
+# AssemblyPayments::CompanyRequestBody
 
 ## Properties
 
@@ -20,9 +20,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::CompanyRequestBody.new(
+instance = AssemblyPayments::CompanyRequestBody.new(
   name: ABC,
   legal_name: ABC Pty Ltd,
   tax_number: 123456789,

@@ -1,4 +1,4 @@
-# OpenapiClient::WireDetails
+# AssemblyPayments::WireDetails
 
 ## Properties
 
@@ -21,9 +21,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::WireDetails.new(
+instance = AssemblyPayments::WireDetails.new(
   beneficiary: Assembly Payments,
   address_line1: 500 Bourke Street,
   city: Melbourne,

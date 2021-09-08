@@ -1,4 +1,4 @@
-# OpenapiClient::CardAccountDeletion
+# AssemblyPayments::CardAccountDeletion
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::CardAccountDeletion.new(
+instance = AssemblyPayments::CardAccountDeletion.new(
   card_account: Successfully redacted
 )
 ```

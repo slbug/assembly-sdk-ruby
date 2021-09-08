@@ -1,4 +1,4 @@
-# OpenapiClient::SingleRoutingNumberRoutingNumber
+# AssemblyPayments::SingleRoutingNumberRoutingNumber
 
 ## Properties
 
@@ -18,9 +18,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::SingleRoutingNumberRoutingNumber.new(
+instance = AssemblyPayments::SingleRoutingNumberRoutingNumber.new(
   routing_number: 122235821,
   customer_name: US BANK NA,
   address: EP-MN-WN1A,

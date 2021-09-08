@@ -1,4 +1,4 @@
-# OpenapiClient::BatchTransactionAddressCountry
+# AssemblyPayments::BatchTransactionAddressCountry
 
 ## Properties
 
@@ -14,9 +14,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::BatchTransactionAddressCountry.new(
+instance = AssemblyPayments::BatchTransactionAddressCountry.new(
   id: null,
   name: null,
   three_code: null,

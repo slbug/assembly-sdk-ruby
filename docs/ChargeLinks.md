@@ -1,4 +1,4 @@
-# OpenapiClient::ChargeLinks
+# AssemblyPayments::ChargeLinks
 
 ## Properties
 
@@ -15,9 +15,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::ChargeLinks.new(
+instance = AssemblyPayments::ChargeLinks.new(
   _self: /charges?limit&#x3D;2&amp;offset,
   buyers: /charges/cb7eafc1-571c-425c-9adc-f56cb585cd68/buyers,
   sellers: /charges/cb7eafc1-571c-425c-9adc-f56cb585cd68/sellers,

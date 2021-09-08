@@ -1,4 +1,4 @@
-# OpenapiClient::CardAccountVerifyRequestBody
+# AssemblyPayments::CardAccountVerifyRequestBody
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::CardAccountVerifyRequestBody.new(
+instance = AssemblyPayments::CardAccountVerifyRequestBody.new(
   cvv: 123
 )
 ```

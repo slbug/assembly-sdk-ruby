@@ -1,4 +1,4 @@
-# OpenapiClient::WireDetailsWithId
+# AssemblyPayments::WireDetailsWithId
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::WireDetailsWithId.new(
+instance = AssemblyPayments::WireDetailsWithId.new(
   id: 100fd4a0-0538-11e6-b512-3e1d05defe78,
   wire_details: null
 )

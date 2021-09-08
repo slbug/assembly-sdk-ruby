@@ -1,4 +1,4 @@
-# OpenapiClient::CardAccountCardAccountsCard
+# AssemblyPayments::CardAccountCardAccountsCard
 
 ## Properties
 
@@ -13,9 +13,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::CardAccountCardAccountsCard.new(
+instance = AssemblyPayments::CardAccountCardAccountsCard.new(
   type: visa,
   full_name: Bella Buyer,
   number: XXXX-XXXX-XXXX-1111,

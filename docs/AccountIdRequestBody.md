@@ -1,4 +1,4 @@
-# OpenapiClient::AccountIdRequestBody
+# AssemblyPayments::AccountIdRequestBody
 
 ## Properties
 
@@ -12,9 +12,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::AccountIdRequestBody.new(
+instance = AssemblyPayments::AccountIdRequestBody.new(
   account_id: 725cc8c0-759b-0138-5d6d-0a58a9feac05,
   device_id: ,
   ip_address: ,

@@ -1,4 +1,4 @@
-# OpenapiClient::BatchTransactionAccountExternal
+# AssemblyPayments::BatchTransactionAccountExternal
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::BatchTransactionAccountExternal.new(
+instance = AssemblyPayments::BatchTransactionAccountExternal.new(
   account_type_id: 9100,
   currency: null
 )

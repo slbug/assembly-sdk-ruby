@@ -1,4 +1,4 @@
-# OpenapiClient::Charge
+# AssemblyPayments::Charge
 
 ## Properties
 
@@ -36,9 +36,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::Charge.new(
+instance = AssemblyPayments::Charge.new(
   id: cb7eafc1-571c-425c-9adc-f56cb585cd68,
   name: Charge for Delivery,
   custom_descriptor: null,

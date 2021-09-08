@@ -1,4 +1,4 @@
-# OpenapiClient::CallbackResponseResponse
+# AssemblyPayments::CallbackResponseResponse
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::CallbackResponseResponse.new(
+instance = AssemblyPayments::CallbackResponseResponse.new(
   error: OK
 )
 ```

@@ -1,4 +1,4 @@
-# OpenapiClient::Error
+# AssemblyPayments::Error
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::Error.new(
+instance = AssemblyPayments::Error.new(
   error: null
 )
 ```

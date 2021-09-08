@@ -1,4 +1,4 @@
-# OpenapiClient::AuthenticationApi
+# AssemblyPayments::AuthenticationApi
 
 All URIs are relative to *https://test.api.promisepay.com*
 
@@ -19,9 +19,9 @@ Exchange client application credentials for a bearer token. Please ensure to cal
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -30,14 +30,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::AuthenticationApi.new
-tokens_request_body = OpenapiClient::TokensRequestBody.new({grant_type: 'client_credentials', client_id: '10ajtntet1ccghuo8mv9ojglma', client_secret: 'hto00nsjk6osurndceon4rsn2irhi8s4lurau5f797d0smb94l6', scope: 'im-au-04/cdbf9590-1db6-0139-ac4d-0a58a9feac03'}) # TokensRequestBody | 
+api_instance = AssemblyPayments::AuthenticationApi.new
+tokens_request_body = AssemblyPayments::TokensRequestBody.new({grant_type: 'client_credentials', client_id: '10ajtntet1ccghuo8mv9ojglma', client_secret: 'hto00nsjk6osurndceon4rsn2irhi8s4lurau5f797d0smb94l6', scope: 'im-au-04/cdbf9590-1db6-0139-ac4d-0a58a9feac03'}) # TokensRequestBody | 
 
 begin
   # Token
   result = api_instance.token(tokens_request_body)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling AuthenticationApi->token: #{e}"
 end
 ```
@@ -55,7 +55,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <TokensResponse>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling AuthenticationApi->token_with_http_info: #{e}"
 end
 ```

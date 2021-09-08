@@ -1,4 +1,4 @@
-# OpenapiClient::Company
+# AssemblyPayments::Company
 
 ## Properties
 
@@ -16,9 +16,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::Company.new(
+instance = AssemblyPayments::Company.new(
   legal_name: Samuel&#39;s Gardening Pty Ltd,
   name: Samuel&#39;s Gardening,
   tax_number: 100200300,

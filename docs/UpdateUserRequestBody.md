@@ -1,4 +1,4 @@
-# OpenapiClient::UpdateUserRequestBody
+# AssemblyPayments::UpdateUserRequestBody
 
 ## Properties
 
@@ -27,9 +27,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::UpdateUserRequestBody.new(
+instance = AssemblyPayments::UpdateUserRequestBody.new(
   first_name: Neol1556506027,
   last_name: Calangi,
   email: neol.calangi+buyer1556506027@promisepay.com,

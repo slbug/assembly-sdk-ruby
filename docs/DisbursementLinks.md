@@ -1,4 +1,4 @@
-# OpenapiClient::DisbursementLinks
+# AssemblyPayments::DisbursementLinks
 
 ## Properties
 
@@ -15,9 +15,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::DisbursementLinks.new(
+instance = AssemblyPayments::DisbursementLinks.new(
   transactions: /disbursements/8a31ebfa-421b-4cbb-9241-632f71b3778a/transactions,
   wallet_accounts: /disbursements/ea36e48a-4638-4d1a-a345-e1a0a584df8b/wallet_accounts,
   paypal_accounts: /disbursements/ea36e48a-4638-4d1a-a345-e1a0a584df8b/paypal_accounts,

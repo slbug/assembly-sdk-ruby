@@ -1,4 +1,4 @@
-# OpenapiClient::BatchTransactionMarketplace
+# AssemblyPayments::BatchTransactionMarketplace
 
 ## Properties
 
@@ -14,9 +14,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::BatchTransactionMarketplace.new(
+instance = AssemblyPayments::BatchTransactionMarketplace.new(
   group_name: null,
   name: null,
   short_name: null,

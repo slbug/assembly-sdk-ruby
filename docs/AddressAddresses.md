@@ -1,4 +1,4 @@
-# OpenapiClient::AddressAddresses
+# AssemblyPayments::AddressAddresses
 
 ## Properties
 
@@ -16,9 +16,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::AddressAddresses.new(
+instance = AssemblyPayments::AddressAddresses.new(
   addressline1: null,
   addressline2: null,
   postcode: null,

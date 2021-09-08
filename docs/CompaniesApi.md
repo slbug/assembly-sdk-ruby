@@ -1,4 +1,4 @@
-# OpenapiClient::CompaniesApi
+# AssemblyPayments::CompaniesApi
 
 All URIs are relative to *https://test.api.promisepay.com*
 
@@ -22,9 +22,9 @@ Create a **Company** associated with the **User** using a given `user_id`. **Not
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -33,14 +33,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::CompaniesApi.new
-company_request_body = OpenapiClient::CompanyRequestBody.new({name: 'ABC', legal_name: 'ABC Pty Ltd', tax_number: '123456789', country: 'AUS', user_id: 'buyer-70729325'}) # CompanyRequestBody | 
+api_instance = AssemblyPayments::CompaniesApi.new
+company_request_body = AssemblyPayments::CompanyRequestBody.new({name: 'ABC', legal_name: 'ABC Pty Ltd', tax_number: '123456789', country: 'AUS', user_id: 'buyer-70729325'}) # CompanyRequestBody | 
 
 begin
   # Create Company
   result = api_instance.create_company(company_request_body)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling CompaniesApi->create_company: #{e}"
 end
 ```
@@ -58,7 +58,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleCompany>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling CompaniesApi->create_company_with_http_info: #{e}"
 end
 ```
@@ -95,9 +95,9 @@ Retrieve an ordered and paginated list of existing **Companies**.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -106,7 +106,7 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::CompaniesApi.new
+api_instance = AssemblyPayments::CompaniesApi.new
 opts = {
   limit: 56, # Integer | Number of records to retrieve. Up to 200.
   offset: 56 # Integer | Number of records to offset. Required for pagination.
@@ -116,7 +116,7 @@ begin
   # List Companies
   result = api_instance.list_companies(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling CompaniesApi->list_companies: #{e}"
 end
 ```
@@ -134,7 +134,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SimpleCompanies>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling CompaniesApi->list_companies_with_http_info: #{e}"
 end
 ```
@@ -172,9 +172,9 @@ Show details of a specific **Company** using a given `:id`.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -183,14 +183,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::CompaniesApi.new
+api_instance = AssemblyPayments::CompaniesApi.new
 id = 'aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee' # String | Company ID
 
 begin
   # Show Company
   result = api_instance.show_company(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling CompaniesApi->show_company: #{e}"
 end
 ```
@@ -208,7 +208,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleCompany>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling CompaniesApi->show_company_with_http_info: #{e}"
 end
 ```
@@ -245,9 +245,9 @@ Update an existing **Company** attributes using a given `:id`.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -256,15 +256,15 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::CompaniesApi.new
+api_instance = AssemblyPayments::CompaniesApi.new
 id = 'aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee' # String | Company ID
-company_request_body = OpenapiClient::CompanyRequestBody.new({name: 'ABC', legal_name: 'ABC Pty Ltd', tax_number: '123456789', country: 'AUS', user_id: 'buyer-70729325'}) # CompanyRequestBody | 
+company_request_body = AssemblyPayments::CompanyRequestBody.new({name: 'ABC', legal_name: 'ABC Pty Ltd', tax_number: '123456789', country: 'AUS', user_id: 'buyer-70729325'}) # CompanyRequestBody | 
 
 begin
   # Update Company
   result = api_instance.update_company(id, company_request_body)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling CompaniesApi->update_company: #{e}"
 end
 ```
@@ -282,7 +282,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleCompany>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling CompaniesApi->update_company_with_http_info: #{e}"
 end
 ```

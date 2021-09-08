@@ -1,4 +1,4 @@
-# OpenapiClient::WalletAccountBpayDetailsBpayDetails
+# AssemblyPayments::WalletAccountBpayDetailsBpayDetails
 
 ## Properties
 
@@ -12,9 +12,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::WalletAccountBpayDetailsBpayDetails.new(
+instance = AssemblyPayments::WalletAccountBpayDetailsBpayDetails.new(
   biller_code: null,
   reference: null,
   amount: null,

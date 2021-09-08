@@ -1,4 +1,4 @@
-# OpenapiClient::MarketplaceMarketplacesRelated
+# AssemblyPayments::MarketplaceMarketplacesRelated
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::MarketplaceMarketplacesRelated.new(
+instance = AssemblyPayments::MarketplaceMarketplacesRelated.new(
   users: null,
   company: null
 )

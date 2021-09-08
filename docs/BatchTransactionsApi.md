@@ -1,4 +1,4 @@
-# OpenapiClient::BatchTransactionsApi
+# AssemblyPayments::BatchTransactionsApi
 
 All URIs are relative to *https://test.api.promisepay.com*
 
@@ -20,9 +20,9 @@ Retrieve an ordered and paginated list of existing **Batch Transactions**. The l
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -31,7 +31,7 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::BatchTransactionsApi.new
+api_instance = AssemblyPayments::BatchTransactionsApi.new
 opts = {
   limit: 56, # Integer | Number of records to retrieve. Up to 200.
   offset: 56, # Integer | Number of records to offset. Required for pagination.
@@ -50,7 +50,7 @@ begin
   # List Batch Transactions
   result = api_instance.list_batch_transactions(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling BatchTransactionsApi->list_batch_transactions: #{e}"
 end
 ```
@@ -68,7 +68,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListBatchTransactions>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling BatchTransactionsApi->list_batch_transactions_with_http_info: #{e}"
 end
 ```
@@ -115,9 +115,9 @@ Get a batch transaction using its ID
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -126,14 +126,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::BatchTransactionsApi.new
+api_instance = AssemblyPayments::BatchTransactionsApi.new
 id = '90c1418b-f4f4-413e-a4ba-f29c334e7f55' # String | Transaction ID
 
 begin
   # Show Batch Transaction
   result = api_instance.show_batch_transaction(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling BatchTransactionsApi->show_batch_transaction: #{e}"
 end
 ```
@@ -151,7 +151,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleBatchTransaction>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling BatchTransactionsApi->show_batch_transaction_with_http_info: #{e}"
 end
 ```

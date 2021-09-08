@@ -1,4 +1,4 @@
-# OpenapiClient::ListBpayAccountsMeta
+# AssemblyPayments::ListBpayAccountsMeta
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::ListBpayAccountsMeta.new(
+instance = AssemblyPayments::ListBpayAccountsMeta.new(
   limit: null,
   offset: null,
   total: null

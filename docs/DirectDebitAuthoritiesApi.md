@@ -1,4 +1,4 @@
-# OpenapiClient::DirectDebitAuthoritiesApi
+# AssemblyPayments::DirectDebitAuthoritiesApi
 
 All URIs are relative to *https://test.api.promisepay.com*
 
@@ -21,9 +21,9 @@ Create a **Direct Debit Authority** associated with a **Bank Account**. The **Di
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -32,14 +32,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::DirectDebitAuthoritiesApi.new
-direct_debit_authority_request_body = OpenapiClient::DirectDebitAuthorityRequestBody.new({account_id: '7fac6c60-6f5b-0138-eb9a-0a58a9feac03', amount: 100}) # DirectDebitAuthorityRequestBody | 
+api_instance = AssemblyPayments::DirectDebitAuthoritiesApi.new
+direct_debit_authority_request_body = AssemblyPayments::DirectDebitAuthorityRequestBody.new({account_id: '7fac6c60-6f5b-0138-eb9a-0a58a9feac03', amount: 100}) # DirectDebitAuthorityRequestBody | 
 
 begin
   # Create Direct Debit Authority
   result = api_instance.create_direct_debit_authority(direct_debit_authority_request_body)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling DirectDebitAuthoritiesApi->create_direct_debit_authority: #{e}"
 end
 ```
@@ -57,7 +57,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleDirectDebitAuthority>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling DirectDebitAuthoritiesApi->create_direct_debit_authority_with_http_info: #{e}"
 end
 ```
@@ -94,9 +94,9 @@ Retrieve an ordered and paginated list of existing **Direct Debit Authorities**.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -105,7 +105,7 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::DirectDebitAuthoritiesApi.new
+api_instance = AssemblyPayments::DirectDebitAuthoritiesApi.new
 account_id = 'a2463ce3-229b-4da1-8a07-93366c1092c9' # String | Bank account ID
 opts = {
   limit: 56, # Integer | Number of records to retrieve. Up to 200.
@@ -116,7 +116,7 @@ begin
   # List Direct Debit Authorities
   result = api_instance.list_direct_debit_authorities(account_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling DirectDebitAuthoritiesApi->list_direct_debit_authorities: #{e}"
 end
 ```
@@ -134,7 +134,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListDirectDebitAuthorities>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling DirectDebitAuthoritiesApi->list_direct_debit_authorities_with_http_info: #{e}"
 end
 ```
@@ -173,9 +173,9 @@ Show details of a specific **Direct Debit Authority** using a given `:id`.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -184,14 +184,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::DirectDebitAuthoritiesApi.new
+api_instance = AssemblyPayments::DirectDebitAuthoritiesApi.new
 id = '57abfd04-2ccb-4d55-8bd3-6f1a24a6ea47' # String | Direct debit authority ID
 
 begin
   # Show Direct Debit Authority
   result = api_instance.show_direct_debit_authority(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling DirectDebitAuthoritiesApi->show_direct_debit_authority: #{e}"
 end
 ```
@@ -209,7 +209,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleDirectDebitAuthority>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling DirectDebitAuthoritiesApi->show_direct_debit_authority_with_http_info: #{e}"
 end
 ```

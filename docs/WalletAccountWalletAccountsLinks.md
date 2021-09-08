@@ -1,4 +1,4 @@
-# OpenapiClient::WalletAccountWalletAccountsLinks
+# AssemblyPayments::WalletAccountWalletAccountsLinks
 
 ## Properties
 
@@ -15,9 +15,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::WalletAccountWalletAccountsLinks.new(
+instance = AssemblyPayments::WalletAccountWalletAccountsLinks.new(
   _self: /transactions/aed45af0-6f63-0138-901c-0a58a9feac03/wallet_accounts,
   users: /wallet_accounts/5c1c6b10-4c56-0137-8cd7-0242ac110002/users,
   batch_transactions: /wallet_accounts/5c1c6b10-4c56-0137-8cd7-0242ac110002/batch_transactions,

@@ -1,4 +1,4 @@
-# OpenapiClient::ItemsApi
+# AssemblyPayments::ItemsApi
 
 All URIs are relative to *https://test.api.promisepay.com*
 
@@ -30,9 +30,9 @@ Create an **Item**. Items require two **Users**, a buyer and a seller. The `buye
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -41,14 +41,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::ItemsApi.new
-item_request_body = OpenapiClient::ItemRequestBody.new({id: '7190770-1-2908', name: 'Item 7190770-1-2908', amount: 102, payment_type: 2, buyer_id: 'buyer-719013950014', seller_id: 'seller-71718579'}) # ItemRequestBody | 
+api_instance = AssemblyPayments::ItemsApi.new
+item_request_body = AssemblyPayments::ItemRequestBody.new({id: '7190770-1-2908', name: 'Item 7190770-1-2908', amount: 102, payment_type: 2, buyer_id: 'buyer-719013950014', seller_id: 'seller-71718579'}) # ItemRequestBody | 
 
 begin
   # Create Item
   result = api_instance.create_item(item_request_body)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ItemsApi->create_item: #{e}"
 end
 ```
@@ -66,7 +66,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleItem>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ItemsApi->create_item_with_http_info: #{e}"
 end
 ```
@@ -103,9 +103,9 @@ Delete an existing **Item** using a given `:id`.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -114,14 +114,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::ItemsApi.new
+api_instance = AssemblyPayments::ItemsApi.new
 id = '7190770-1-2908' # String | Marketplace / Platform item ID
 
 begin
   # Delete Item
   result = api_instance.delete_item(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ItemsApi->delete_item: #{e}"
 end
 ```
@@ -139,7 +139,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleItem>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ItemsApi->delete_item_with_http_info: #{e}"
 end
 ```
@@ -176,9 +176,9 @@ Retrieve an ordered and paginated list of **Batch Transactions** associated with
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -187,14 +187,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::ItemsApi.new
+api_instance = AssemblyPayments::ItemsApi.new
 id = '7139651-1-2046' # String | Marketplace / Platform item ID
 
 begin
   # List Item Batch Transactions
   result = api_instance.list_item_batch_transactions(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ItemsApi->list_item_batch_transactions: #{e}"
 end
 ```
@@ -212,7 +212,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListBatchTransactions>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ItemsApi->list_item_batch_transactions_with_http_info: #{e}"
 end
 ```
@@ -249,9 +249,9 @@ Retrieve an ordered and paginated list of **Transactions** associated with the *
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -260,14 +260,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::ItemsApi.new
+api_instance = AssemblyPayments::ItemsApi.new
 id = '7190985-1-9382' # String | Marketplace / Platform item ID
 
 begin
   # List Item Transactions
   result = api_instance.list_item_transactions(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ItemsApi->list_item_transactions: #{e}"
 end
 ```
@@ -285,7 +285,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Transactions>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ItemsApi->list_item_transactions_with_http_info: #{e}"
 end
 ```
@@ -322,9 +322,9 @@ OK
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -333,7 +333,7 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::ItemsApi.new
+api_instance = AssemblyPayments::ItemsApi.new
 search = 'search_example' # String | A text value to be used for searching within the item description
 opts = {
   offset: 56, # Integer | Number of records to offset. Required for pagination.
@@ -346,7 +346,7 @@ begin
   # List Items
   result = api_instance.list_items(search, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ItemsApi->list_items: #{e}"
 end
 ```
@@ -364,7 +364,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Items>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ItemsApi->list_items_with_http_info: #{e}"
 end
 ```
@@ -405,9 +405,9 @@ Show details of a specific **Item** using a given `:id`.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -416,14 +416,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::ItemsApi.new
+api_instance = AssemblyPayments::ItemsApi.new
 id = '7190770-1-2908' # String | Marketplace / Platform item ID
 
 begin
   # Show Item
   result = api_instance.show_item(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ItemsApi->show_item: #{e}"
 end
 ```
@@ -441,7 +441,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleItem>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ItemsApi->show_item_with_http_info: #{e}"
 end
 ```
@@ -478,9 +478,9 @@ Show the buyer **User** associated with the **Item** using a given `:id`.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -489,14 +489,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::ItemsApi.new
+api_instance = AssemblyPayments::ItemsApi.new
 id = '7190973-1-3780' # String | Marketplace / Platform item ID
 
 begin
   # Show Item Buyer
   result = api_instance.show_item_buyer(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ItemsApi->show_item_buyer: #{e}"
 end
 ```
@@ -514,7 +514,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleUser>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ItemsApi->show_item_buyer_with_http_info: #{e}"
 end
 ```
@@ -551,9 +551,9 @@ Show the **Fees** associated with the **Item** using a given `:id`.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -562,14 +562,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::ItemsApi.new
+api_instance = AssemblyPayments::ItemsApi.new
 id = '7190973-1-3780' # String | Marketplace / Platform item ID
 
 begin
   # Show Item Fees
   result = api_instance.show_item_fees(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ItemsApi->show_item_fees: #{e}"
 end
 ```
@@ -587,7 +587,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Fees>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ItemsApi->show_item_fees_with_http_info: #{e}"
 end
 ```
@@ -624,9 +624,9 @@ Show the seller **User** associated with the **Item** using a given `:id`.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -635,14 +635,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::ItemsApi.new
+api_instance = AssemblyPayments::ItemsApi.new
 id = '7190973-1-3780' # String | Marketplace / Platform item ID
 
 begin
   # Show Item Seller
   result = api_instance.show_item_seller(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ItemsApi->show_item_seller: #{e}"
 end
 ```
@@ -660,7 +660,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleUser>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ItemsApi->show_item_seller_with_http_info: #{e}"
 end
 ```
@@ -697,9 +697,9 @@ Show the status of an **Item** using a given `:id`.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -708,14 +708,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::ItemsApi.new
+api_instance = AssemblyPayments::ItemsApi.new
 id = '7139651-1-2046' # String | Marketplace / Platform item ID
 
 begin
   # Show Item Status
   result = api_instance.show_item_status(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ItemsApi->show_item_status: #{e}"
 end
 ```
@@ -733,7 +733,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleStatus>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ItemsApi->show_item_status_with_http_info: #{e}"
 end
 ```
@@ -770,9 +770,9 @@ Show the **Item** wire payment details using a given `:id`.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -781,14 +781,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::ItemsApi.new
+api_instance = AssemblyPayments::ItemsApi.new
 id = '7190985-1-9382' # String | Marketplace / Platform item ID
 
 begin
   # Show Item Wire Details
   result = api_instance.show_item_wire_details(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ItemsApi->show_item_wire_details: #{e}"
 end
 ```
@@ -806,7 +806,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleWireDetailsWithId>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ItemsApi->show_item_wire_details_with_http_info: #{e}"
 end
 ```
@@ -843,9 +843,9 @@ Update an existing **Items** attributes using a given `:id`. Note: An item can o
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -854,15 +854,15 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::ItemsApi.new
+api_instance = AssemblyPayments::ItemsApi.new
 id = '7190770-1-2908' # String | Item ID
-update_item_request_body = OpenapiClient::UpdateItemRequestBody.new # UpdateItemRequestBody | 
+update_item_request_body = AssemblyPayments::UpdateItemRequestBody.new # UpdateItemRequestBody | 
 
 begin
   # Update Item
   result = api_instance.update_item(id, update_item_request_body)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ItemsApi->update_item: #{e}"
 end
 ```
@@ -880,7 +880,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SingleItem>
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling ItemsApi->update_item_with_http_info: #{e}"
 end
 ```

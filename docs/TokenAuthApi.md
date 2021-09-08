@@ -1,4 +1,4 @@
-# OpenapiClient::TokenAuthApi
+# AssemblyPayments::TokenAuthApi
 
 All URIs are relative to *https://test.api.promisepay.com*
 
@@ -19,9 +19,9 @@ Create a token, either for a bank or a card account, that can be used with the *
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'assembly_payments'
 # setup authorization
-OpenapiClient.configure do |config|
+AssemblyPayments.configure do |config|
   # Configure HTTP basic authorization: basicAuth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -30,14 +30,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::TokenAuthApi.new
-token_auth_request_body = OpenapiClient::TokenAuthRequestBody.new({token_type: 'bank', user_id: 'seller-68611249'}) # TokenAuthRequestBody | 
+api_instance = AssemblyPayments::TokenAuthApi.new
+token_auth_request_body = AssemblyPayments::TokenAuthRequestBody.new({token_type: 'bank', user_id: 'seller-68611249'}) # TokenAuthRequestBody | 
 
 begin
   # Generate Token
   result = api_instance.generate_token(token_auth_request_body)
   p result
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling TokenAuthApi->generate_token: #{e}"
 end
 ```
@@ -55,7 +55,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => Object
-rescue OpenapiClient::ApiError => e
+rescue AssemblyPayments::ApiError => e
   puts "Error when calling TokenAuthApi->generate_token_with_http_info: #{e}"
 end
 ```

@@ -1,4 +1,4 @@
-# OpenapiClient::Disbursements
+# AssemblyPayments::Disbursements
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'assembly_payments'
 
-instance = OpenapiClient::Disbursements.new(
+instance = AssemblyPayments::Disbursements.new(
   disbursements: null,
   meta: null
 )
