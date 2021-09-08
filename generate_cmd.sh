@@ -1,0 +1,1 @@
+openapi-generator generate -i https://api.swaggerhub.com/apis/AssemblyPlatforms/assembly-api/2.0/swagger.yaml\?resolved\=true -g ruby -o assembly-sdk-ruby --additional-properties=moduleName=AssemblyPayments
