@@ -31,6 +31,8 @@ module AssemblyPayments
 
     attr_accessor :links
 
+    attr_accessor :npp_details
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -63,7 +65,8 @@ module AssemblyPayments
         :'currency' => :'currency',
         :'verification_status' => :'verification_status',
         :'balance' => :'balance',
-        :'links' => :'links'
+        :'links' => :'links',
+        :'npp_details' => :'npp_details'
       }
     end
 
@@ -82,7 +85,8 @@ module AssemblyPayments
         :'currency' => :'String',
         :'verification_status' => :'String',
         :'balance' => :'Integer',
-        :'links' => :'WalletAccountWalletAccountsLinks'
+        :'links' => :'WalletAccountWalletAccountsLinks',
+        :'npp_details' => :'WalletAccountNppDetailsNppDetails'
       }
     end
 

@@ -15,15 +15,12 @@ require 'time'
 
 module AssemblyPayments
   class WalletAccountNppDetails
-    attr_accessor :id
-
-    attr_accessor :npp_details
+    attr_accessor :wallet_accounts
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'id' => :'id',
-        :'npp_details' => :'npp_details'
+        :'wallet_accounts' => :'wallet_accounts'
       }
     end
 
@@ -35,8 +32,7 @@ module AssemblyPayments
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'id' => :'String',
-        :'npp_details' => :'WalletAccountNppDetailsNppDetails'
+        :'wallet_accounts' => :'WalletAccountWalletAccounts'
       }
     end
 
